@@ -41,7 +41,7 @@
       "name": "Rankly",
       "url": "https://www.rankly.lv",
       "logo": "https://www.rankly.lv/favicon.svg",
-      "description": "Web aģentūra Rīgā. Izv eidojam augstas konversijas mājaslapas Latvijas B2B uzņēmumiem.",
+      "description": "Web aģentūra Rīgā. Izveidojam augstas konversijas mājaslapas Latvijas B2B uzņēmumiem.",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Rīga",
@@ -57,15 +57,6 @@
     }
     </script>
 
-    <!-- GA4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
-
     <!-- Fonts: Outfit only (display font), non-blocking -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -76,5 +67,36 @@
   <body class="bg-background text-foreground">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- GA4 + GTM deferred — loads after first interaction or 3.5s -->
+    <script>
+      let analyticsLoaded = false;
+      function loadAnalytics() {
+        if (analyticsLoaded) return;
+        analyticsLoaded = true;
+
+        // GTM
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PNR6M3WS');
+
+        // GA4
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-7FVFHTFW7W';
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-7FVFHTFW7W');
+      }
+
+      ['scroll','mousemove','touchstart','click'].forEach(function(e) {
+        window.addEventListener(e, loadAnalytics, { once: true, passive: true });
+      });
+      setTimeout(loadAnalytics, 3500);
+    </script>
   </body>
 </html>
