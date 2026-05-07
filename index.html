@@ -33,6 +33,39 @@
     <meta name="twitter:description" content="Augstas konversijas mājaslapas Latvijas uzņēmumiem. Demo 24h laikā." />
     <meta name="twitter:image" content="https://www.rankly.lv/og-image.png" />
 
+    <!-- Schema.org LocalBusiness JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Rankly",
+      "url": "https://www.rankly.lv",
+      "logo": "https://www.rankly.lv/favicon.svg",
+      "description": "Web aģentūra Rīgā. Izv eidojam augstas konversijas mājaslapas Latvijas B2B uzņēmumiem.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Rīga",
+        "addressCountry": "LV"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Latvia"
+      },
+      "serviceType": ["Web dizains", "SEO optimīzācija", "Google Ads", "Mājaslapu izstrāde"],
+      "priceRange": "€€",
+      "sameAs": []
+    }
+    </script>
+
+    <!-- GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
     <!-- Fonts: Outfit only (display font), non-blocking -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
