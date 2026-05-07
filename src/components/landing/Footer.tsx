@@ -21,7 +21,7 @@ export function Footer() {
       </div>
       <div className="border-t border-hairline">
         <p className="max-w-6xl mx-auto px-6 py-5 text-center text-xs text-[oklch(0.45_0_0)]">
-          © 2026 Rankly. Visi tiesības aizsargātas.
+          © 2026 Rankly<span className="text-primary">.</span> Visas tiesības aizsargātas.
         </p>
       </div>
     </footer>
