@@ -1,15 +1,10 @@
-import { motion } from "framer-motion";
 import autoMastersImg from "@/assets/hero-auto-masters.webp";
 
 export function Hero() {
   return (
     <section className="pt-32 pb-16 md:pt-40 md:pb-20">
       <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
+        <div className="animate-fade-up">
           <p className="text-xs md:text-sm uppercase tracking-[0.25em] text-primary font-medium mb-6">
             / Web aģentūra Rīgā
           </p>
@@ -34,16 +29,11 @@ export function Hero() {
               </li>
             ))}
           </ul>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15 }}
-          className="lg:rotate-2"
-        >
+        <div className="lg:rotate-2 animate-fade-up [animation-delay:150ms]">
           <BrowserMock />
-        </motion.div>
+        </div>
       </div>
     </section>
   );
