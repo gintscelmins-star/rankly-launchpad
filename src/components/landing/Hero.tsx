@@ -63,6 +63,8 @@ function BrowserMock() {
       <img
         src={autoMastersImg}
         alt="Auto Masters Rīgā — premium autoserviss"
+        width={634}
+        height={349}
         className="w-full h-auto block"
         fetchpriority="high"
       />
