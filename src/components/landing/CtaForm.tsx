@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 
 type FormValues = { name: string; email: string; company: string };
 
-const WEBHOOK_URL = "https://hook.eu2.make.com/WEBHOOK_PLACEHOLDER";
+const WEBHOOK_URL = "https://formspree.io/f/mzdovwrg";
 
 export function CtaForm() {
   const {
@@ -16,11 +16,12 @@ export function CtaForm() {
 
   const onSubmit = async (data: FormValues) => {
     try {
-      await fetch(WEBHOOK_URL, {
+      const res = await fetch(WEBHOOK_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify(data),
       });
+      if (!res.ok) throw new Error();
       toast.success("Paldies! Demo saņemsi 24h laikā. 🚀");
       reset();
     } catch {
