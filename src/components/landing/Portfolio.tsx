@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import virtuvesImg from "@/assets/portfolio-virtuves.png";
+import virtuvesImg from "@/assets/portfolio-virtuves.webp";
 
 type Project = {
   bg?: string;
@@ -12,23 +12,16 @@ type Project = {
 };
 
 const projects: Project[] = [
-  { bg: "#1a1a2e", tag: "Zobārstnīecība", name: "iDental Rīgā", desc: "Moderns klīnikas dizains ar online rezervāciju" },
-  { bg: "#0d1f12", tag: "Enērģētika", name: "Sovereign Solar", desc: "Lead-gen lapa saules paneļu montāžai" },
-  {
-    image: "https://riga-auto-masters.vercel.app/assets/hero-bmw-1.jpg",
-    imageAlt: "Auto Masters Rīgā — premium autoserviss",
-    url: "https://riga-auto-masters.vercel.app",
-    tag: "Autoserviss",
-    name: "Auto Masters Rīgā",
-    desc: "Lokāla SEO optimīzēta lapa ar CTA",
-  },
+  { bg: "#1a1a2e", tag: "Zobārstniecība", name: "iDental Rīgā", desc: "Moderns klīnikas dizains ar online rezervāciju" },
+  { bg: "#0d1f12", tag: "Enerģētika", name: "Sovereign Solar", desc: "Lead-gen lapa saules paneļu montāžai" },
+  { bg: "#1f1a0d", tag: "Autoserviss", name: "Auto Masters Rīgā", desc: "Lokāla SEO optimizēta lapa ar CTA" },
   {
     image: virtuvesImg,
     imageAlt: "Iebūvējamās virtuves Rīgā",
     url: "https://www.iebuvejamasvirtuves.lv",
     tag: "Mēbeles",
     name: "Iebūvējamās Virtuves",
-    desc: "E-com tipa katalōga lapa ar kalkulatoru",
+    desc: "Landing lapa ar CRM",
   },
 ];
 
@@ -60,6 +53,7 @@ export function Portfolio() {
                     src={p.image}
                     alt={p.imageAlt}
                     className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"
+                    loading="lazy"
                   />
                 </div>
               ) : (

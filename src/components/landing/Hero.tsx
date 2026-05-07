@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import autoMastersImg from "@/assets/hero-auto-masters.png";
+import autoMastersImg from "@/assets/hero-auto-masters.webp";
 
 export function Hero() {
   return (
@@ -64,6 +64,7 @@ function BrowserMock() {
         src={autoMastersImg}
         alt="Auto Masters Rīgā — premium autoserviss"
         className="w-full h-auto block"
+        fetchpriority="high"
       />
     </div>
   );
