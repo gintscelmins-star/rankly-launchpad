@@ -57,7 +57,7 @@
     }
     </script>
 
-    <!-- Fonts: Outfit only (display font), non-blocking -->
+    <!-- Fonts: Outfit only, non-blocking -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=optional" />
@@ -67,36 +67,5 @@
   <body class="bg-background text-foreground">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-
-    <!-- GA4 + GTM deferred — loads after first interaction or 3.5s -->
-    <script>
-      let analyticsLoaded = false;
-      function loadAnalytics() {
-        if (analyticsLoaded) return;
-        analyticsLoaded = true;
-
-        // GTM
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-PNR6M3WS');
-
-        // GA4
-        var s = document.createElement('script');
-        s.async = true;
-        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-7FVFHTFW7W';
-        document.head.appendChild(s);
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-7FVFHTFW7W');
-      }
-
-      ['scroll','mousemove','touchstart','click'].forEach(function(e) {
-        window.addEventListener(e, loadAnalytics, { once: true, passive: true });
-      });
-      setTimeout(loadAnalytics, 3500);
-    </script>
   </body>
 </html>
