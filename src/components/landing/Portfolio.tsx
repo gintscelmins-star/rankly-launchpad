@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import virtuvesImg from "@/assets/portfolio-virtuves.png";
 
 type Project = {
   bg?: string;
@@ -22,7 +23,7 @@ const projects: Project[] = [
     desc: "Lokāla SEO optimīzēta lapa ar CTA",
   },
   {
-    image: "https://www.iebuvejamasvirtuves.lv/images/hero.webp",
+    image: virtuvesImg,
     imageAlt: "Iebūvējamās virtuves Rīgā",
     url: "https://www.iebuvejamasvirtuves.lv",
     tag: "Mēbeles",
