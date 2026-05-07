@@ -9,8 +9,8 @@ const items = [
   { q: "Cik ātri saņemšu demo?", a: "24 stundu laikā pēc pieprasījuma saņemšanas. Parasti ātrāk." },
   { q: "Vai man jāslēdz līgums pēc demo?", a: "Nē. Demo ir bezmaksas un bez saistībām. Tu izlemj, vai turpināt." },
   { q: "Cik maksā pilna mājaslapa?", a: "Sākuma cena ir €50 mēnesī — ietver mājaslapu, hostingu un atjauninājumus. Nav vienreizēja maksājuma." },
-  { q: "Kādā tehnoloģijā tiek veidotas lapas?", a: "React, Next.js vai Lovable — atkarībā no projekta vajadzībām. Visas lapas ir ātras, mobilās un SEO draudzīgas." },
-  { q: "Vai varat palīdzēt arī ar Google Ads vai SEO?", a: "Jā. Pēc mājaslapas izveides piedāvājam arī SEO optimizāciju, Google Ads pārvaldību un AI automatizāciju." },
+  { q: "Kādā tehnoloģijā tiek veidotas lapas?", a: "React un Next.js — jaunakošās un ātrākās web tehnoloģijas. Visas lapas ir ātras, mobilās un SEO draudzīgas." },
+  { q: "Vai varat palīdzēt ar Google Ads vai SEO?", a: "Jā. Pēc mājaslapas izveides piedāvājam arī SEO optimīzāciju, Google Ads pārvaldībanu un AI automātizāciju." },
 ];
 
 export function Faq() {
