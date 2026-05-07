@@ -17,7 +17,7 @@ export function Solution() {
           transition={{ duration: 0.5 }}
           className="font-display font-black text-4xl md:text-5xl text-foreground"
         >
-          Ko tu saņem no Rankly
+          Ko tu saņem no Rankly<span className="text-primary">.</span>
         </motion.h2>
         <div className="space-y-10">
           {items.map((i, idx) => (

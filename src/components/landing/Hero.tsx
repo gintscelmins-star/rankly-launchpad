@@ -17,7 +17,7 @@ export function Hero() {
             Tava mājaslapa<br />šobrīd zaudē<br />klientus.
           </h1>
           <p className="mt-6 text-[17px] md:text-[18px] text-muted-foreground max-w-[480px] leading-relaxed">
-            Rankly izveido augstas konversijas mājaslapas autoservisiem, zobārstniecībām, juridiskām firmām un citiem Latvijas B2B uzņēmumiem. Demo 24h laikā.
+            Rankly<span className="text-primary">.</span> izveido augstas konversijas mājaslapas autoservisiem, zobārstniecībām, ēdināšanas un citiem Latvijas uzņēmumiem. Demo 24h laikā.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
