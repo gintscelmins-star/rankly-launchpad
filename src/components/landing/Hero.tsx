@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import autoMastersImg from "@/assets/hero-auto-masters.png";
 
 export function Hero() {
   return (
@@ -56,29 +57,14 @@ function BrowserMock() {
         <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
         <span className="w-3 h-3 rounded-full bg-[#28c840]" />
         <div className="ml-3 flex-1 max-w-xs rounded-md bg-background/70 border border-hairline px-3 py-1 text-xs text-muted-foreground">
-          rankly.lv/demo
+          riga-auto-masters.lv
         </div>
       </div>
-      <div className="p-6 space-y-4">
-        <div className="flex items-center justify-between">
-          <div className="h-3 w-24 rounded bg-foreground/80" />
-          <div className="flex gap-2">
-            <div className="h-2 w-10 rounded bg-muted" />
-            <div className="h-2 w-10 rounded bg-muted" />
-            <div className="h-2 w-10 rounded bg-primary" />
-          </div>
-        </div>
-        <div className="space-y-2 pt-4">
-          <div className="h-5 w-3/4 rounded bg-foreground/90" />
-          <div className="h-5 w-1/2 rounded bg-foreground/70" />
-          <div className="h-2 w-full rounded bg-muted" />
-          <div className="h-2 w-5/6 rounded bg-muted" />
-        </div>
-        <div className="pt-2">
-          <div className="inline-block h-9 w-40 rounded-lg bg-primary" />
-        </div>
-        <div className="mt-4 h-32 w-full rounded-lg bg-gradient-to-br from-hairline to-background border border-hairline" />
-      </div>
+      <img
+        src={autoMastersImg}
+        alt="Auto Masters Rīgā — premium autoserviss"
+        className="w-full h-auto block"
+      />
     </div>
   );
 }
