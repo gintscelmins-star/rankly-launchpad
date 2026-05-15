@@ -1,8 +1,8 @@
 import { useState, useEffect, useCallback } from "react";
 import autoMastersImg from "@/assets/hero-auto-masters.webp";
-import identalImg from "@/assets/hero-idental.jpg";
-import kuukImg from "@/assets/hero-kuuk.jpg";
-import almaImg from "@/assets/hero-alma.jpg";
+import identalImg from "@/assets/hero-idental.webp";
+import kuukImg from "@/assets/hero-kuuk.webp";
+import almaImg from "@/assets/hero-alma.webp";
 
 const slides = [
   { src: autoMastersImg, alt: "Auto Masters Rīgā — premium autoserviss", label: "automastersriga.lv" },
@@ -73,7 +73,6 @@ function BrowserMock({
   const slide = slides[current];
   return (
     <div className="rounded-2xl border border-hairline bg-card shadow-2xl shadow-black/40 overflow-hidden">
-      {/* Browser chrome */}
       <div className="flex items-center gap-2 px-4 py-3 border-b border-hairline bg-background/40">
         <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
         <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
@@ -83,7 +82,6 @@ function BrowserMock({
         </div>
       </div>
 
-      {/* Slide image */}
       <div className="relative overflow-hidden">
         <img
           key={current}
@@ -97,7 +95,6 @@ function BrowserMock({
         />
       </div>
 
-      {/* Dot navigation */}
       <div className="flex justify-center gap-2 py-3 bg-background/40 border-t border-hairline">
         {slides.map((s, i) => (
           <button
