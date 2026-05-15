@@ -5,10 +5,10 @@ import kuukImg from "@/assets/hero-kuuk.webp.webp";
 import almaImg from "@/assets/hero-alma.webp.webp";
 
 const slides = [
-  { src: autoMastersImg, alt: "Auto Masters Rīgā — premium autoserviss", label: "automastersriga.lv" },
-  { src: identalImg, alt: "iDental — zobārstniecība Rīgā", label: "idental.lv" },
-  { src: kuukImg, alt: "Cakes & Breakfast — kafejnīca", label: "kuuk.lv" },
-  { src: almaImg, alt: "Alma — maizes māksla", label: "alma.lv" },
+  { src: autoMastersImg, alt: "Auto Masters Rīgā — premium autoserviss" },
+  { src: identalImg, alt: "iDental — zobārstniecība Rīgā" },
+  { src: kuukImg, alt: "Cakes & Breakfast — kafejnīca" },
+  { src: almaImg, alt: "Alma — maizes māksla" },
 ];
 
 const AUTOPLAY_INTERVAL = 3500;
@@ -78,7 +78,7 @@ function BrowserMock({
         <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
         <span className="w-3 h-3 rounded-full bg-[#28c840]" />
         <div className="ml-3 flex-1 max-w-xs rounded-md bg-background/70 border border-hairline px-3 py-1 text-xs text-muted-foreground">
-          {slide.label}
+          rankly.lv
         </div>
       </div>
 
@@ -96,11 +96,11 @@ function BrowserMock({
       </div>
 
       <div className="flex justify-center gap-2 py-3 bg-background/40 border-t border-hairline">
-        {slides.map((s, i) => (
+        {slides.map((_, i) => (
           <button
             key={i}
             onClick={() => onSelect(i)}
-            aria-label={`Rādīt: ${s.label}`}
+            aria-label={`Rādīt attēlu ${i + 1}`}
             className={`w-2 h-2 rounded-full transition-all duration-300 ${
               i === current
                 ? "bg-primary w-5"
