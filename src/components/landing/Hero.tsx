@@ -1,8 +1,8 @@
 import { useState, useEffect, useCallback } from "react";
 import autoMastersImg from "@/assets/hero-auto-masters.webp";
-import identalImg from "@/assets/hero-idental.webp";
-import kuukImg from "@/assets/hero-kuuk.webp";
-import almaImg from "@/assets/hero-alma.webp";
+import identalImg from "@/assets/hero-idental.webp.webp";
+import kuukImg from "@/assets/hero-kuuk.webp.webp";
+import almaImg from "@/assets/hero-alma.webp.webp";
 
 const slides = [
   { src: autoMastersImg, alt: "Auto Masters Rīgā — premium autoserviss", label: "automastersriga.lv" },
