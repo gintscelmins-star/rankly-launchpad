@@ -6,6 +6,9 @@ import { Stats } from "@/components/landing/Stats";
 import { Problem } from "@/components/landing/Problem";
 import { Solution } from "@/components/landing/Solution";
 import { Portfolio } from "@/components/landing/Portfolio";
+import { Services } from "@/components/sections/Services";
+import { CaseStudies } from "@/components/sections/CaseStudies";
+import { About } from "@/components/sections/About";
 import { Process } from "@/components/landing/Process";
 import { CtaForm } from "@/components/landing/CtaForm";
 import { Faq } from "@/components/landing/Faq";
@@ -25,6 +28,9 @@ export function App() {
           <Problem />
           <Solution />
           <Portfolio />
+          <Services />
+          <CaseStudies />
+          <About />
           <Process />
           <CtaForm />
           <Faq />
