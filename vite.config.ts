@@ -16,4 +16,15 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
     strictPort: true,
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes("node_modules/react/") || id.includes("node_modules/react-dom/")) {
+            return "react-vendor";
+          }
+        },
+      },
+    },
+  },
 }));

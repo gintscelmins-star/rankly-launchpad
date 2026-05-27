@@ -84,7 +84,7 @@ export function CtaForm() {
   }
 
   return (
-    <section id="kontakti" className="py-24 md:py-32 bg-card scroll-mt-20">
+    <section id="kontakti" className="py-12 md:py-20 lg:py-32 bg-card scroll-mt-20">
       <div className="max-w-[640px] mx-auto px-6 text-center">
         <h2 className="font-display font-black text-4xl md:text-5xl text-foreground">
           Saņem demo savam uzņēmumam

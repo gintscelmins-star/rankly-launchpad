@@ -4,7 +4,7 @@ export function FooterCTA() {
   const { headline, cta, microcopy } = content.footer
 
   return (
-    <section className="py-32 md:py-40 border-t border-hairline text-center">
+    <section className="py-16 md:py-24 lg:py-32 border-t border-hairline text-center">
       <div className="max-w-2xl mx-auto px-6 flex flex-col items-center gap-6">
         <h2 className="font-display font-black text-4xl md:text-6xl text-foreground leading-tight">
           {headline}

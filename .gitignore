@@ -20,6 +20,13 @@ dist-ssr
 .wrangler/
 .dev.vars
 
+# Local binaries and scratch files
+*.exe
+*.dmg
+*.pkg
+.claude/
+package-lock.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

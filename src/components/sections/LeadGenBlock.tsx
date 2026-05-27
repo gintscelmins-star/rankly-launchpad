@@ -12,7 +12,7 @@ export function LeadGenBlock() {
   const { title, subtitle, pillars, pricing, statement } = content.leadgen
 
   return (
-    <section id="leadgen" className="py-24 md:py-32 border-t border-hairline scroll-mt-20">
+    <section id="leadgen" className="py-12 md:py-20 lg:py-32 border-t border-hairline scroll-mt-20">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <div className="max-w-2xl mb-16">

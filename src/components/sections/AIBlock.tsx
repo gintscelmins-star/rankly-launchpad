@@ -7,7 +7,7 @@ export function AIBlock() {
   return (
     <section
       id="ai"
-      className="py-24 md:py-32 border-t border-hairline scroll-mt-20"
+      className="py-12 md:py-20 lg:py-32 border-t border-hairline scroll-mt-20"
       style={{ backgroundColor: "oklch(0.11 0 0)" }}
     >
       <div className="max-w-6xl mx-auto px-6">

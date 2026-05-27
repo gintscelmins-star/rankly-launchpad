@@ -1,5 +1,4 @@
-// Legacy exports — used by old components no longer in App.tsx
-export const servicesData = [
+const _servicesData = [
   {
     id: 1,
     title: "24h Mājaslapa",
@@ -42,7 +41,7 @@ export const servicesData = [
   },
 ]
 
-export const caseStudiesData = [
+const _caseStudiesData = [
   {
     id: 1,
     name: "Sovereign Solar",
@@ -78,7 +77,7 @@ export const caseStudiesData = [
   },
 ]
 
-export const aboutData = {
+const _aboutData = {
   heading: "Par mums",
   intro: "Rankly dibināts ar vienu mērķi — digitālie risinājumi, kas strādā, nevis tikai izskatās. Specializējamies backend sistēmās, AI automatizācijā un lead generation platformās. Katrs projekts ir veidots ar konkrētu biznesa rezultātu prātā: ROI, konversijas, un mērogojamība.",
   trustSignals: [
