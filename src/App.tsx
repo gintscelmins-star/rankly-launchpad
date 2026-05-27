@@ -1,17 +1,18 @@
-import { lazy, Suspense } from "react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "sonner";
 import { Navbar } from "@/components/landing/Navbar";
 import { Hero } from "@/components/landing/Hero";
+import { WebsiteBlock } from "@/components/sections/WebsiteBlock";
+import { LeadGenBlock } from "@/components/sections/LeadGenBlock";
+import { AIBlock } from "@/components/sections/AIBlock";
+import { NelasitLink } from "@/components/sections/NelasitLink";
+import { FooterCTA } from "@/components/sections/FooterCTA";
+import { CtaForm } from "@/components/landing/CtaForm";
+import { Footer } from "@/components/landing/Footer";
 import { NelasitPage } from "@/pages/NelasitPage";
 import { MobileCTA } from "@/components/landing/MobileCTA";
 
-const WebsiteBlock = lazy(() => import("@/components/sections/WebsiteBlock").then((m) => ({ default: m.WebsiteBlock })));
-const LeadGenBlock = lazy(() => import("@/components/sections/LeadGenBlock").then((m) => ({ default: m.LeadGenBlock })));
-const AIBlock      = lazy(() => import("@/components/sections/AIBlock").then((m) => ({ default: m.AIBlock })));
-const NelasitLink  = lazy(() => import("@/components/sections/NelasitLink").then((m) => ({ default: m.NelasitLink })));
-const FooterCTA    = lazy(() => import("@/components/sections/FooterCTA").then((m) => ({ default: m.FooterCTA })));
-const CtaForm      = lazy(() => import("@/components/landing/CtaForm").then((m) => ({ default: m.CtaForm })));
-const Footer       = lazy(() => import("@/components/landing/Footer").then((m) => ({ default: m.Footer })));
+const queryClient = new QueryClient();
 
 export function App() {
   if (window.location.pathname.startsWith("/nelasit")) {
@@ -19,24 +20,22 @@ export function App() {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground pb-14 md:pb-0">
-      <Toaster theme="dark" position="top-center" richColors />
-      <Navbar />
-      <main>
-        <Hero />
-        <Suspense fallback={null}>
+    <QueryClientProvider client={queryClient}>
+      <div className="min-h-screen bg-background text-foreground pb-14 md:pb-0">
+        <Toaster theme="dark" position="top-center" richColors />
+        <Navbar />
+        <main>
+          <Hero />
           <WebsiteBlock />
           <LeadGenBlock />
           <AIBlock />
           <NelasitLink />
           <FooterCTA />
           <CtaForm />
-        </Suspense>
-      </main>
-      <Suspense fallback={null}>
+        </main>
         <Footer />
-      </Suspense>
-      <MobileCTA />
-    </div>
+        <MobileCTA />
+      </div>
+    </QueryClientProvider>
   );
 }
