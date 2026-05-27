@@ -1,6 +1,6 @@
 import { content } from "@/data/content"
 import { TypewriterText } from "@/components/ui/TypewriterText"
-import { NodeGraphWrapper } from "@/components/graph/NodeGraphWrapper"
+import { NodeGraph } from "@/components/ui/NodeGraph"
 
 export function Hero() {
   const { headline, typewriterWords, sublineTemplate, cta, microcopy } = content.hero
@@ -40,7 +40,7 @@ export function Hero() {
           style={{ height: "460px" }}
           aria-hidden="true"
         >
-          <NodeGraphWrapper />
+          <NodeGraph />
         </div>
       </div>
     </section>

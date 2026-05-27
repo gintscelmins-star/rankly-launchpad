@@ -5,7 +5,7 @@ const navLinks = [
   { label: "Mājaslapa", href: "#website" },
   { label: "Lead Gen", href: "#leadgen" },
   { label: "AI", href: "#ai" },
-  { label: "Nelasīt", href: "#nelasit" },
+  { label: "Nelasīt", href: "/nelasit" },
   { label: "Kontakti", href: "#contact" },
 ]
 
@@ -22,6 +22,10 @@ export function Navbar() {
 
   const handleNavClick = (href: string) => {
     setMobileOpen(false)
+    if (href.startsWith("/")) {
+      window.location.href = href
+      return
+    }
     const el = document.querySelector(href)
     if (el) {
       el.scrollIntoView({ behavior: "smooth" })
