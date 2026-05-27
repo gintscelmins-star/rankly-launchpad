@@ -22,6 +22,8 @@ export function CtaForm() {
         body: JSON.stringify(data),
       });
       if (!res.ok) throw new Error();
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: "cta_form_success" });
       toast.success("Paldies! Demo saņemsi 24h laikā. 🚀");
       reset();
     } catch {
