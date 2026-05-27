@@ -24,6 +24,9 @@ export function CtaForm() {
       if (!res.ok) throw new Error();
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ event: "cta_form_success" });
+      if (typeof window.gtag_report_conversion === "function") {
+        window.gtag_report_conversion();
+      }
       toast.success("Paldies! Demo saņemsi 24h laikā. 🚀");
       reset();
     } catch {
