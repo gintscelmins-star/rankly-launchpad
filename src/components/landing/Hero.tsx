@@ -1,6 +1,6 @@
 import { content } from "@/data/content"
 import { TypewriterText } from "@/components/ui/TypewriterText"
-import { NodeGraph } from "@/components/ui/NodeGraph"
+import { NodeGraphWrapper } from "@/components/graph/NodeGraphWrapper"
 
 export function Hero() {
   const { headline, typewriterWords, sublineTemplate, cta, microcopy } = content.hero
@@ -34,13 +34,13 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Right — NodeGraph (desktop only) */}
+        {/* Right — NodeGraph A/B (desktop only) */}
         <div
-          className="hidden lg:flex items-center justify-center"
-          style={{ height: "380px" }}
+          className="relative hidden lg:block w-full"
+          style={{ height: "460px" }}
           aria-hidden="true"
         >
-          <NodeGraph />
+          <NodeGraphWrapper />
         </div>
       </div>
     </section>
