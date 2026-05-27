@@ -30,7 +30,7 @@ export function CtaForm() {
   };
 
   return (
-    <section id="cta" className="py-24 md:py-32 bg-card">
+    <section id="contact" className="py-24 md:py-32 bg-card">
       <div className="max-w-[640px] mx-auto px-6 text-center">
         <h2 className="font-display font-black text-4xl md:text-5xl text-foreground">
           Saņem demo savam uzņēmumam

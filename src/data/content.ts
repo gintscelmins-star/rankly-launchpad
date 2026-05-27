@@ -1,3 +1,4 @@
+// Legacy exports — used by old components no longer in App.tsx
 export const servicesData = [
   {
     id: 1,
@@ -39,7 +40,7 @@ export const servicesData = [
     timeline: "Pavisam mēneši",
     icon: "Target",
   },
-];
+]
 
 export const caseStudiesData = [
   {
@@ -75,7 +76,7 @@ export const caseStudiesData = [
     status: "Live",
     statusLabel: "Active",
   },
-];
+]
 
 export const aboutData = {
   heading: "Par mums",
@@ -86,4 +87,187 @@ export const aboutData = {
     { value: "24h", label: "Website delivery" },
   ],
   skills: ["Supabase", "React / Next.js", "Claude API", "Make.com", "Lead Gen Systems", "AI Automation", "Vercel", "PostgreSQL"],
-};
+}
+
+export interface ServiceCard {
+  title: string
+  description: string
+}
+
+export interface ProcessStep {
+  number: string
+  title: string
+  description: string
+}
+
+export interface PricingBlock {
+  price: string
+  features: string[]
+  setup?: string
+  cta: string
+  microcopy: string
+}
+
+export interface AICard {
+  title: string
+  blurredContent: string
+}
+
+export interface ContentData {
+  hero: {
+    headline: string[]
+    typewriterWords: string[]
+    sublineTemplate: string
+    cta: string
+    microcopy: string
+  }
+  website: {
+    title: string
+    subtitle: string
+    cards: ServiceCard[]
+    steps: ProcessStep[]
+    pricing: PricingBlock
+    statement: string
+  }
+  leadgen: {
+    title: string
+    subtitle: string
+    pillars: ServiceCard[]
+    pricing: PricingBlock
+    statement: string
+  }
+  ai: {
+    warning: string
+    title: string
+    subtitle: string
+    cards: AICard[]
+    cta: string
+    microcopy: string
+    statement: string
+  }
+  footer: {
+    headline: string
+    cta: string
+    microcopy: string
+  }
+}
+
+export const content: ContentData = {
+  hero: {
+    headline: ["Tu vari pelnīt vairāk.", "Šodien.", "Ar vienu lēmumu."],
+    typewriterWords: ["Mājaslapa", "Google Ads", "CRM", "AI"],
+    sublineTemplate: "_______ strādās Tavā vietā — viss no €50/mēn. Demo 24 stundu laikā.",
+    cta: "Gribu redzēt kā →",
+    microcopy: "Bez līguma. Bez riska.",
+  },
+  website: {
+    title: "Tava jaunā mājaslapa — klienti to iemīlēs",
+    subtitle: "Magnētiska un funkcionāla. No €50/mēn. Gatava 24 stundu laikā.",
+    cards: [
+      { title: "Biznesa dizains", description: "Izstrādāts tieši Tavu klientu piesaistei" },
+      { title: "Mobile-first", description: "70% klientu meklē no telefona. Tava lapa ir ātra un perfekta uz jebkura ekrāna." },
+      { title: "24h delivery", description: "Piesakies šodien — rīt mājaslapa ir live. Ne nedēļas, ne mēneši." },
+      { title: "SEO-ready", description: "Google redz tavu lapu no pirmās dienas. Pamata optimizācija iekļauta." },
+      { title: "Analytics", description: "Redzi kas apmeklē tavu lapu, no kurienes nāk un ko dara. Google Analytics setup iekļauts." },
+      { title: "Hosting + domēns", description: "Viss iekļauts €50/mēn. Nav slēpto maksu, nav pārsteigumu." },
+    ],
+    steps: [
+      { number: "01", title: "PIESAKIES", description: "Aizpildi formu. Pastāsti par savu biznesu." },
+      { number: "02", title: "DEMO 24H", description: "Mēs izstrādājam tavu lapu.\nTu redzi pirms maksā." },
+      { number: "03", title: "LIVE + KLIENTI", description: "Mājaslapa live. Google to redz.\nKlienti sāk zvanīt." },
+    ],
+    pricing: {
+      price: "no €50/mēn",
+      features: [
+        "Custom mājaslapa",
+        "Hosting + domēns",
+        "Mobile-friendly",
+        "SEO-ready struktūra",
+        "Analytics setup",
+        "1 mēnesis bezmaksas atbalsts",
+      ],
+      setup: "Setup: €149 (vienreizējs) vai 6 mēn. līgums → €0 setup",
+      cta: "Gribu demo 24h laikā →",
+      microcopy: "Maksā tikai ja patīk.",
+    },
+    statement:
+      "Mēs netaisām ego mājaslapas.\n\nKatrs lēmums balstās datos —\ntava auditorija, viņu paradumi, viņu gaume.\n\nPirms koda rakstām — analizējam.\nĀtrums. Funkcionalitāte. Estētika.\nŠajā secībā.",
+  },
+  leadgen: {
+    title: "Mājaslapa ir tikai sākums.",
+    subtitle: "Tava sistēma, kas automātiski piesaista klientus.",
+    pillars: [
+      {
+        title: "Google Ads pārvaldīšana",
+        description:
+          "Mēs izveidojam un optimizējam tavu Google reklāmu. Tu maksā tikai par klikšķiem no taviem klientiem.",
+      },
+      {
+        title: "CRM sistēma",
+        description:
+          "Katrs pieprasījums automātiski nonāk tavā CRM. Neviens klients nepazūd. Viss ir pārredzams.",
+      },
+      {
+        title: "AI apstrāde",
+        description: "Tu iesaisties tikai kad klients ir gatavs pirkt.",
+      },
+      {
+        title: "Admin panelis",
+        description:
+          "Viss vienā kontroles panelī: leads, Google Ads atskaites, konversijas, ieņēmumi. Bez Excel, bez manuālas saskaitīšanas.",
+      },
+    ],
+    pricing: {
+      price: "no €290/mēn",
+      features: [
+        "Mājaslapa (iekļauta)",
+        "Google Ads pārvaldīšana",
+        "CRM sistēma",
+        "AI auto outreach",
+        "Admin panelis",
+        "Ikmēneša atskaite",
+      ],
+      cta: "Gribu uzzināt vairāk →",
+      microcopy: "",
+    },
+    statement:
+      "Mājaslapa bez sistēmas ir tikai\nskaista telpa, kurā neviens nenāk.\n\nMēs pievienojam sistēmu —\nCRM, reklāma, automātika.\n\nTu saņem klientus.\nMēs pārvaldām visu pārējo.",
+  },
+  ai: {
+    warning:
+      "BRĪDINĀJUMS: AI risinājumu izmantošana var dot Jums negodīgu priekšrocību biznesā",
+    title: "AI risinājumi — jauns peļņas avots",
+    subtitle: "Individuāli pielāgoti rīki un automatizācijas.",
+    cards: [
+      {
+        title: "Iegūt vairāk klientu ar AI",
+        blurredContent:
+          "Automatizēta lead kvalifikācija, AI chatbot kas konvertē apmeklētājus klientos 24/7, personalizēti follow-up e-pasti uz katra klienta uzvedības bāzes. Sistēma strādā kamēr tu guli.",
+      },
+      {
+        title: "Samazināt darbaspēka izmaksas ar AI",
+        blurredContent:
+          "Automātiski rēķini, AI asistents kas atbild klientiem, dokumentu apstrāde bez cilvēka iesaistes. Vidējais ietaupījums — 12 stundas nedēļā uz 5 darbinieku komandu.",
+      },
+      {
+        title: "Uzzināt konkurentu noslēpumus ar AI",
+        blurredContent:
+          "Konkurentu cenu monitorings reāllaikā, SEO stratēģiju analīze, klientu atsauksmju izpēte, tirgus tendences pirms tās kļūst publiski zināmas. Informācija, kas nav pieejama bez AI rīkiem.",
+      },
+      {
+        title: "x10 peļņa ar AI",
+        blurredContent:
+          "Dinamiskas cenas atkarībā no pieprasījuma, upsell automatizācija, klientu LTV optimizācija, ieņēmumu prognozēšana. Sistēma, kas pelna kamēr tu strādā pie nākamā projekta.",
+      },
+    ],
+    cta: "Uzzināt vairāk par saviem AI risinājumiem →",
+    microcopy: "Katrs risinājums individuāli pielāgots.",
+    statement:
+      "Kamēr konkurenti vēl domā par AI —\ntavi procesi jau darbojas automātiski.\n\nMēs neieviesam tehnoloģiju.\nMēs dodam tev priekšrocību,\nkas tirgū nav publiski pieejama.",
+  },
+  footer: {
+    headline: "Viens lēmums. 24 stundas.",
+    cta: "Gribu redzēt kā →",
+    microcopy: "Bez līguma. Bez riska.",
+  },
+}

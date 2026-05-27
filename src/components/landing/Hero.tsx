@@ -1,114 +1,48 @@
-import { useState, useEffect, useCallback } from "react";
-import autoMastersImg from "@/assets/hero-auto-masters.webp";
-import identalImg from "@/assets/hero-idental.webp.webp";
-import kuukImg from "@/assets/hero-kuuk.webp.webp";
-import almaImg from "@/assets/hero-alma.webp.webp";
-
-const slides = [
-  { src: autoMastersImg, alt: "Auto Masters Rīgā — premium autoserviss" },
-  { src: identalImg, alt: "iDental — zobārstniecība Rīgā" },
-  { src: kuukImg, alt: "Cakes & Breakfast — kafejnīca" },
-  { src: almaImg, alt: "Alma — maizes māksla" },
-];
-
-const AUTOPLAY_INTERVAL = 3500;
+import { content } from "@/data/content"
+import { TypewriterText } from "@/components/ui/TypewriterText"
+import { NodeGraph } from "@/components/ui/NodeGraph"
 
 export function Hero() {
-  const [current, setCurrent] = useState(0);
-
-  const next = useCallback(() => {
-    setCurrent((c) => (c + 1) % slides.length);
-  }, []);
-
-  useEffect(() => {
-    const id = setInterval(next, AUTOPLAY_INTERVAL);
-    return () => clearInterval(id);
-  }, [next]);
+  const { headline, typewriterWords, sublineTemplate, cta, microcopy } = content.hero
 
   return (
-    <section className="pt-32 pb-16 md:pt-40 md:pb-20">
-      <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <section className="pt-32 pb-16 md:pt-40 md:pb-24">
+      <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-[55%_45%] gap-12 lg:gap-8 items-center">
+        {/* Left — text */}
         <div className="animate-fade-up">
-          <p className="text-xs md:text-sm uppercase tracking-[0.25em] text-primary font-medium mb-6">
-            / Web aģentūra Rīgā
-          </p>
-          <h1 className="font-display font-black uppercase text-foreground leading-[0.95] text-[40px] md:text-[64px]">
-            Tava mājaslapa<br />šobrīd zaudē<br />klientus.
+          <h1 className="font-display font-black text-foreground leading-[1.05] text-[40px] md:text-[64px]">
+            {headline.map((line, i) => (
+              <span key={i}>
+                {line}
+                {i < headline.length - 1 && <br />}
+              </span>
+            ))}
           </h1>
-          <p className="mt-6 text-[17px] md:text-[18px] text-muted-foreground max-w-[480px] leading-relaxed">
-            Rankly<span className="text-primary">.</span> izveido augstas konversijas mājaslapas autoservisiem, zobārstniecībām, ēdināšanas un citiem Latvijas uzņēmumiem. Demo 24h laikā.
+
+          <p className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-[520px]">
+            <TypewriterText words={typewriterWords} template={sublineTemplate} />
           </p>
-          <div className="mt-8 flex flex-wrap items-center gap-4">
+
+          <div className="mt-8 flex flex-col gap-3 items-start">
             <a
-              href="#cta"
+              href="#contact"
               className="inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-4 font-bold text-primary-foreground transition-transform hover:scale-105"
             >
-              Saņemt bezmaksas demo →
+              {cta}
             </a>
+            <span className="text-sm text-muted-foreground">{microcopy}</span>
           </div>
-          <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
-            {["Demo 24h laikā", "Nav saistību", "Redzēsi pirms maksā"].map((t) => (
-              <li key={t} className="flex items-center gap-2">
-                <span className="text-primary">✓</span> {t}
-              </li>
-            ))}
-          </ul>
         </div>
 
-        <div className="lg:rotate-2 animate-fade-up [animation-delay:150ms]">
-          <BrowserMock current={current} onSelect={setCurrent} />
+        {/* Right — NodeGraph (desktop only) */}
+        <div
+          className="hidden lg:flex items-center justify-center"
+          style={{ height: "380px" }}
+          aria-hidden="true"
+        >
+          <NodeGraph />
         </div>
       </div>
     </section>
-  );
-}
-
-function BrowserMock({
-  current,
-  onSelect,
-}: {
-  current: number;
-  onSelect: (i: number) => void;
-}) {
-  const slide = slides[current];
-  return (
-    <div className="rounded-2xl border border-hairline bg-card shadow-2xl shadow-black/40 overflow-hidden">
-      <div className="flex items-center gap-2 px-4 py-3 border-b border-hairline bg-background/40">
-        <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
-        <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
-        <span className="w-3 h-3 rounded-full bg-[#28c840]" />
-        <div className="ml-3 flex-1 max-w-xs rounded-md bg-background/70 border border-hairline px-3 py-1 text-xs text-muted-foreground">
-          rankly.lv
-        </div>
-      </div>
-
-      <div className="relative overflow-hidden">
-        <img
-          key={current}
-          src={slide.src}
-          alt={slide.alt}
-          width={634}
-          height={349}
-          className="w-full h-auto block transition-opacity duration-500 animate-fade-in"
-          fetchpriority={current === 0 ? "high" : "auto"}
-          loading={current === 0 ? "eager" : "lazy"}
-        />
-      </div>
-
-      <div className="flex justify-center gap-2 py-3 bg-background/40 border-t border-hairline">
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => onSelect(i)}
-            aria-label={`Rādīt attēlu ${i + 1}`}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              i === current
-                ? "bg-primary w-5"
-                : "bg-muted-foreground/40 hover:bg-muted-foreground/70"
-            }`}
-          />
-        ))}
-      </div>
-    </div>
-  );
+  )
 }

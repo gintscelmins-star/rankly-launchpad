@@ -2,16 +2,12 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "sonner";
 import { Navbar } from "@/components/landing/Navbar";
 import { Hero } from "@/components/landing/Hero";
-import { Stats } from "@/components/landing/Stats";
-import { Problem } from "@/components/landing/Problem";
-import { Solution } from "@/components/landing/Solution";
-import { Portfolio } from "@/components/landing/Portfolio";
-import { Services } from "@/components/sections/Services";
-import { CaseStudies } from "@/components/sections/CaseStudies";
-import { About } from "@/components/sections/About";
-import { Process } from "@/components/landing/Process";
+import { WebsiteBlock } from "@/components/sections/WebsiteBlock";
+import { LeadGenBlock } from "@/components/sections/LeadGenBlock";
+import { AIBlock } from "@/components/sections/AIBlock";
+import { NelasitBlock } from "@/components/sections/NelasitBlock";
+import { FooterCTA } from "@/components/sections/FooterCTA";
 import { CtaForm } from "@/components/landing/CtaForm";
-import { Faq } from "@/components/landing/Faq";
 import { Footer } from "@/components/landing/Footer";
 
 const queryClient = new QueryClient();
@@ -24,16 +20,12 @@ export function App() {
         <Navbar />
         <main>
           <Hero />
-          <Stats />
-          <Problem />
-          <Solution />
-          <Portfolio />
-          <Services />
-          <CaseStudies />
-          <About />
-          <Process />
+          <WebsiteBlock />
+          <LeadGenBlock />
+          <AIBlock />
+          <NelasitBlock />
+          <FooterCTA />
           <CtaForm />
-          <Faq />
         </main>
         <Footer />
       </div>
