@@ -4,7 +4,7 @@ export function WebsiteBlock() {
   const { title, subtitle, cards, steps, pricing, statement } = content.website
 
   return (
-    <section id="website" className="py-24 md:py-32 border-t border-hairline">
+    <section id="majaslapa" className="py-24 md:py-32 border-t border-hairline scroll-mt-20">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <div className="max-w-2xl mb-16">
@@ -64,7 +64,7 @@ export function WebsiteBlock() {
             </p>
           )}
           <a
-            href="#contact"
+            href="#kontakti"
             className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 font-bold text-primary-foreground transition-transform hover:scale-105 mb-3"
           >
             {pricing.cta}

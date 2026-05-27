@@ -2,11 +2,11 @@ import { useEffect, useState } from "react"
 import { Menu, X } from "lucide-react"
 
 const navLinks = [
-  { label: "Mājaslapa", href: "#website" },
+  { label: "Mājaslapa", href: "#majaslapa" },
   { label: "Lead Gen", href: "#leadgen" },
   { label: "AI", href: "#ai" },
   { label: "Nelasīt", href: "/nelasit" },
-  { label: "Kontakti", href: "#contact" },
+  { label: "Kontakti", href: "#kontakti" },
 ]
 
 export function Navbar() {
@@ -61,10 +61,10 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="#contact"
+            href="#kontakti"
             onClick={(e) => {
               e.preventDefault()
-              handleNavClick("#contact")
+              handleNavClick("#kontakti")
             }}
             className="inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2 text-sm font-bold text-primary-foreground transition-transform hover:scale-105"
           >
@@ -101,10 +101,10 @@ export function Navbar() {
             ))}
             <div className="pt-2 border-t border-hairline">
               <a
-                href="#contact"
+                href="#kontakti"
                 onClick={(e) => {
                   e.preventDefault()
-                  handleNavClick("#contact")
+                  handleNavClick("#kontakti")
                 }}
                 className="block py-2 text-sm font-bold text-primary"
               >

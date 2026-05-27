@@ -12,7 +12,7 @@ export function Footer() {
         </div>
         <div className="md:text-right">
           <a
-            href="#cta"
+            href="#kontakti"
             className="inline-flex items-center gap-2 rounded-xl border border-primary text-primary px-6 py-3 font-bold transition-colors hover:bg-primary hover:text-primary-foreground"
           >
             Saņemt demo →

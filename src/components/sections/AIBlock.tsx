@@ -7,7 +7,7 @@ export function AIBlock() {
   return (
     <section
       id="ai"
-      className="py-24 md:py-32 border-t border-hairline"
+      className="py-24 md:py-32 border-t border-hairline scroll-mt-20"
       style={{ backgroundColor: "oklch(0.11 0 0)" }}
     >
       <div className="max-w-6xl mx-auto px-6">
@@ -42,7 +42,7 @@ export function AIBlock() {
         {/* CTA */}
         <div className="flex flex-col items-start gap-2 mb-20">
           <a
-            href="#contact"
+            href="#kontakti"
             className="inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-4 font-bold text-primary-foreground transition-transform hover:scale-105"
           >
             {cta}

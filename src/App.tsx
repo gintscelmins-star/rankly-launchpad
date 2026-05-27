@@ -3,6 +3,7 @@ import { Toaster } from "sonner";
 import { Navbar } from "@/components/landing/Navbar";
 import { Hero } from "@/components/landing/Hero";
 import { NelasitPage } from "@/pages/NelasitPage";
+import { MobileCTA } from "@/components/landing/MobileCTA";
 
 const WebsiteBlock = lazy(() => import("@/components/sections/WebsiteBlock").then((m) => ({ default: m.WebsiteBlock })));
 const LeadGenBlock = lazy(() => import("@/components/sections/LeadGenBlock").then((m) => ({ default: m.LeadGenBlock })));
@@ -18,7 +19,7 @@ export function App() {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground pb-14 md:pb-0">
       <Toaster theme="dark" position="top-center" richColors />
       <Navbar />
       <main>
@@ -35,6 +36,7 @@ export function App() {
       <Suspense fallback={null}>
         <Footer />
       </Suspense>
+      <MobileCTA />
     </div>
   );
 }

@@ -6,7 +6,7 @@ export function Hero() {
   const { headline, typewriterWords, sublineTemplate, cta, microcopy } = content.hero
 
   return (
-    <section className="pt-32 pb-16 md:pt-40 md:pb-24">
+    <section id="hero" className="pt-32 pb-16 md:pt-40 md:pb-24 scroll-mt-20">
       <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-[55%_45%] gap-12 lg:gap-8 items-center">
         {/* Left — text */}
         <div className="animate-fade-up">

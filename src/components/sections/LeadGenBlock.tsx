@@ -12,7 +12,7 @@ export function LeadGenBlock() {
   const { title, subtitle, pillars, pricing, statement } = content.leadgen
 
   return (
-    <section id="leadgen" className="py-24 md:py-32 border-t border-hairline">
+    <section id="leadgen" className="py-24 md:py-32 border-t border-hairline scroll-mt-20">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <div className="max-w-2xl mb-16">
@@ -92,7 +92,7 @@ export function LeadGenBlock() {
             ))}
           </ul>
           <a
-            href="#contact"
+            href="#kontakti"
             className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 font-bold text-primary-foreground transition-transform hover:scale-105"
           >
             {pricing.cta}
