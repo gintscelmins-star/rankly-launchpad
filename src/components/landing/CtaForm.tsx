@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
 
-type FormValues = { name: string; email: string; company: string };
+type FormValues = { name: string; email: string; phone: string; company: string };
 
 const WEBHOOK_URL = "https://formspree.io/f/mzdovwrg";
 
@@ -59,6 +59,18 @@ export function CtaForm() {
               })}
             />
             {errors.email && <p className="text-xs text-destructive mt-1">{errors.email.message}</p>}
+          </div>
+          <div>
+            <Input
+              type="tel"
+              placeholder="Tālruņa numurs"
+              className="h-12 bg-background border-hairline"
+              {...register("phone", {
+                required: "Lūdzu ievadi tālruņa numuru",
+                pattern: { value: /^[+\d][\d\s\-()]{6,19}$/, message: "Nederīgs tālruņa numurs" },
+              })}
+            />
+            {errors.phone && <p className="text-xs text-destructive mt-1">{errors.phone.message}</p>}
           </div>
           <div>
             <Input
