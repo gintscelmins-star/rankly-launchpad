@@ -20,16 +20,13 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
-  const handleNavClick = (href: string) => {
+  const handleNavClick = (href: string, e: React.MouseEvent<HTMLAnchorElement>) => {
     setMobileOpen(false)
     if (href.startsWith("/")) {
+      e.preventDefault()
       window.location.href = href
-      return
     }
-    const el = document.querySelector(href)
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" })
-    }
+    // Hash links: let browser handle natively — scroll-behavior: smooth + scroll-margin-top does the rest
   }
 
   return (
@@ -51,10 +48,7 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              onClick={(e) => {
-                e.preventDefault()
-                handleNavClick(link.href)
-              }}
+              onClick={(e) => handleNavClick(link.href, e)}
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               {link.label}
@@ -62,10 +56,7 @@ export function Navbar() {
           ))}
           <a
             href="#kontakti"
-            onClick={(e) => {
-              e.preventDefault()
-              handleNavClick("#kontakti")
-            }}
+            onClick={(e) => handleNavClick("#kontakti", e)}
             className="inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2 text-sm font-bold text-primary-foreground transition-transform hover:scale-105"
           >
             Saņemt demo →
@@ -90,10 +81,7 @@ export function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                onClick={(e) => {
-                  e.preventDefault()
-                  handleNavClick(link.href)
-                }}
+                onClick={(e) => handleNavClick(link.href, e)}
                 className="block py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
               >
                 {link.label}
@@ -102,10 +90,7 @@ export function Navbar() {
             <div className="pt-2 border-t border-hairline">
               <a
                 href="#kontakti"
-                onClick={(e) => {
-                  e.preventDefault()
-                  handleNavClick("#kontakti")
-                }}
+                onClick={(e) => handleNavClick("#kontakti", e)}
                 className="block py-2 text-sm font-bold text-primary"
               >
                 Saņemt demo →

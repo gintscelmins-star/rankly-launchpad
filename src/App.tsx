@@ -16,19 +16,14 @@ const queryClient = new QueryClient();
 
 function ScrollToHash() {
   useEffect(() => {
-    const scrollToHash = () => {
-      const hash = window.location.hash;
-      if (!hash) return;
-      const timer = setTimeout(() => {
-        const el = document.getElementById(hash.replace("#", ""));
-        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 100);
-      return () => clearTimeout(timer);
-    };
-
-    scrollToHash();
-    window.addEventListener("hashchange", scrollToHash);
-    return () => window.removeEventListener("hashchange", scrollToHash);
+    const hash = window.location.hash;
+    if (!hash) return;
+    // Wait for React to finish rendering before scrolling
+    const timer = setTimeout(() => {
+      const el = document.getElementById(hash.slice(1));
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 300);
+    return () => clearTimeout(timer);
   }, []);
 
   return null;
