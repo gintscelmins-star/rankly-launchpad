@@ -5,6 +5,7 @@ import { Hero } from "@/components/landing/Hero";
 import { MobileCTA } from "@/components/landing/MobileCTA";
 import { NelasitPage } from "@/pages/NelasitPage";
 import { MozaikaGenerator } from "@/mozaika/MozaikaGenerator";
+import { VideoGenerator } from "@/video/VideoGenerator";
 
 const WebsiteBlock = lazy(() => import("@/components/sections/WebsiteBlock").then((m) => ({ default: m.WebsiteBlock })));
 const LeadGenBlock = lazy(() => import("@/components/sections/LeadGenBlock").then((m) => ({ default: m.LeadGenBlock })));
@@ -46,6 +47,10 @@ function ScrollToHash() {
 }
 
 export function App() {
+  if (window.location.pathname.startsWith("/video")) {
+    return <VideoGenerator />;
+  }
+
   if (window.location.pathname.startsWith("/mozaika")) {
     return <MozaikaGenerator />;
   }

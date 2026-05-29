@@ -1,0 +1,112 @@
+export interface VideoFrame {
+  text: string;
+  startSec: number;
+  endSec: number;
+  fontSize: number;
+  color: string;
+  font: 'sans' | 'mono';
+  align: 'left' | 'center' | 'right';
+}
+
+export interface VideoData {
+  id: number;
+  thumbnail: string;
+  frames: VideoFrame[];
+}
+
+export const VIDEOS: VideoData[] = [
+  {
+    id: 1, thumbnail: 'rankly-ig-cercle-01.png',
+    frames: [
+      { text: 'Tava mājaslapa.', startSec: 7, endSec: 12, fontSize: 72, color: '#E8E8E8', font: 'sans', align: 'left' },
+      { text: 'Vai tā piesaista klientus?', startSec: 12, endSec: 17, fontSize: 56, color: '#6B6B6B', font: 'sans', align: 'left' },
+      { text: 'Vai tā tikai pastāv.', startSec: 17, endSec: 22, fontSize: 56, color: '#E8E8E8', font: 'sans', align: 'left' },
+      { text: 'Rankly.\n24 stundas.\n€50/mēn.', startSec: 22, endSec: 27, fontSize: 56, color: '#C8FF00', font: 'sans', align: 'left' },
+      { text: 'rankly.lv', startSec: 27, endSec: 30, fontSize: 32, color: '#C8FF00', font: 'mono', align: 'left' },
+    ]
+  },
+  {
+    id: 2, thumbnail: 'rankly-ig-cercle-02.png',
+    frames: [
+      { text: 'Mājaslapa nav produkts.', startSec: 7, endSec: 12, fontSize: 64, color: '#E8E8E8', font: 'sans', align: 'left' },
+      { text: 'Produkts ir sistēma.', startSec: 12, endSec: 17, fontSize: 64, color: '#C8FF00', font: 'sans', align: 'left' },
+      { text: 'Google Ads.\nCRM.\nAI.\nMājaslapa.', startSec: 17, endSec: 23, fontSize: 48, color: '#E8E8E8', font: 'sans', align: 'left' },
+      { text: 'Viss savienots.\nViss automātiski.', startSec: 23, endSec: 27, fontSize: 48, color: '#C8FF00', font: 'sans', align: 'left' },
+      { text: 'rankly.lv', startSec: 27, endSec: 30, fontSize: 32, color: '#C8FF00', font: 'mono', align: 'left' },
+    ]
+  },
+  {
+    id: 3, thumbnail: 'rankly-ig-cercle-03.png',
+    frames: [
+      { text: 'BRĪDINĀJUMS.', startSec: 7, endSec: 12, fontSize: 80, color: '#CC0000', font: 'sans', align: 'center' },
+      { text: 'AI risinājumu izmantošana\nvar dot Jums\nnegodīgu priekšrocību\nbiznesā.', startSec: 12, endSec: 20, fontSize: 44, color: '#E8E8E8', font: 'sans', align: 'center' },
+      { text: 'Tavi konkurenti\nvēl to nedara.', startSec: 20, endSec: 24, fontSize: 48, color: '#6B6B6B', font: 'sans', align: 'center' },
+      { text: 'Tu vari būt pirmais.', startSec: 24, endSec: 27, fontSize: 52, color: '#E8E8E8', font: 'sans', align: 'center' },
+      { text: 'rankly.lv/#ai', startSec: 27, endSec: 30, fontSize: 32, color: '#C8FF00', font: 'mono', align: 'center' },
+    ]
+  },
+  {
+    id: 4, thumbnail: 'rankly-ig-cercle-04.png',
+    frames: [
+      { text: 'Katru dienu.', startSec: 7, endSec: 11, fontSize: 80, color: '#E8E8E8', font: 'sans', align: 'left' },
+      { text: 'Klienti meklē\ntavu pakalpojumu.', startSec: 11, endSec: 16, fontSize: 56, color: '#6B6B6B', font: 'sans', align: 'left' },
+      { text: 'Katru dienu\nizvēlas konkurentu.', startSec: 16, endSec: 21, fontSize: 56, color: '#E8E8E8', font: 'sans', align: 'left' },
+      { text: 'Ne tāpēc ka viņi labāki.\nTāpēc ka viņi redzami.', startSec: 21, endSec: 26, fontSize: 44, color: '#6B6B6B', font: 'sans', align: 'left' },
+      { text: 'Rankly to maina.\n24 stundās.', startSec: 26, endSec: 29, fontSize: 48, color: '#C8FF00', font: 'sans', align: 'left' },
+      { text: 'rankly.lv', startSec: 29, endSec: 30, fontSize: 32, color: '#C8FF00', font: 'mono', align: 'left' },
+    ]
+  },
+  {
+    id: 5, thumbnail: 'rankly-ig-cercle-05.png',
+    frames: [
+      { text: 'Sistēma.', startSec: 7, endSec: 11, fontSize: 96, color: '#E8E8E8', font: 'sans', align: 'center' },
+      { text: 'Svira.', startSec: 11, endSec: 15, fontSize: 96, color: '#E8E8E8', font: 'sans', align: 'center' },
+      { text: 'Izpilde.', startSec: 15, endSec: 19, fontSize: 96, color: '#C8FF00', font: 'sans', align: 'center' },
+      { text: 'Viss pārējais\nir troksnis.', startSec: 19, endSec: 24, fontSize: 52, color: '#6B6B6B', font: 'sans', align: 'center' },
+      { text: 'RANKLY.', startSec: 24, endSec: 27, fontSize: 72, color: '#C8FF00', font: 'sans', align: 'center' },
+      { text: 'rankly.lv', startSec: 27, endSec: 30, fontSize: 32, color: '#C8FF00', font: 'mono', align: 'center' },
+    ]
+  },
+  {
+    id: 6, thumbnail: 'rankly-ig-cercle-06.png',
+    frames: [
+      { text: '€50.', startSec: 7, endSec: 11, fontSize: 120, color: '#E8E8E8', font: 'sans', align: 'left' },
+      { text: 'Mēnesī.', startSec: 11, endSec: 15, fontSize: 80, color: '#6B6B6B', font: 'sans', align: 'left' },
+      { text: 'Mājaslapa.\nHosting.\nSEO.\nAnalytics.', startSec: 15, endSec: 22, fontSize: 48, color: '#E8E8E8', font: 'sans', align: 'left' },
+      { text: 'Viss.', startSec: 22, endSec: 25, fontSize: 96, color: '#C8FF00', font: 'sans', align: 'left' },
+      { text: 'Nav slēpto maksu.\nNav pārsteigumu.', startSec: 25, endSec: 28, fontSize: 40, color: '#6B6B6B', font: 'sans', align: 'left' },
+      { text: 'rankly.lv', startSec: 28, endSec: 30, fontSize: 32, color: '#C8FF00', font: 'mono', align: 'left' },
+    ]
+  },
+  {
+    id: 7, thumbnail: 'rankly-ig-cercle-07.png',
+    frames: [
+      { text: 'Trīs soļi.', startSec: 7, endSec: 11, fontSize: 80, color: '#E8E8E8', font: 'sans', align: 'left' },
+      { text: 'Piesakies.\n5 minūtes.', startSec: 11, endSec: 15, fontSize: 56, color: '#6B6B6B', font: 'sans', align: 'left' },
+      { text: 'Demo 24 stundās.\nTu redzi pirms maksā.', startSec: 15, endSec: 20, fontSize: 48, color: '#E8E8E8', font: 'sans', align: 'left' },
+      { text: 'Mājaslapa live.\nKlienti sāk zvanīt.', startSec: 20, endSec: 25, fontSize: 48, color: '#C8FF00', font: 'sans', align: 'left' },
+      { text: 'Viens lēmums.', startSec: 25, endSec: 28, fontSize: 64, color: '#E8E8E8', font: 'sans', align: 'left' },
+      { text: 'rankly.lv', startSec: 28, endSec: 30, fontSize: 32, color: '#C8FF00', font: 'mono', align: 'left' },
+    ]
+  },
+  {
+    id: 8, thumbnail: 'rankly-ig-cercle-08.png',
+    frames: [
+      { text: 'Cik leads\nšodien pazaudēji?', startSec: 7, endSec: 12, fontSize: 64, color: '#E8E8E8', font: 'sans', align: 'left' },
+      { text: 'Neviens nezvanīja.\nNeviens nerakstīja.', startSec: 12, endSec: 17, fontSize: 52, color: '#6B6B6B', font: 'sans', align: 'left' },
+      { text: 'Viņi bija.\nTava sistēma\nviņus nepaturēja.', startSec: 17, endSec: 22, fontSize: 48, color: '#E8E8E8', font: 'sans', align: 'left' },
+      { text: 'CRM.\nGoogle Ads.\nAI outreach.\nNo €290/mēn.', startSec: 22, endSec: 27, fontSize: 44, color: '#C8FF00', font: 'sans', align: 'left' },
+      { text: 'Neviens klients\nnepazūd.', startSec: 27, endSec: 29, fontSize: 48, color: '#E8E8E8', font: 'sans', align: 'left' },
+      { text: 'rankly.lv/#leadgen', startSec: 29, endSec: 30, fontSize: 28, color: '#C8FF00', font: 'mono', align: 'left' },
+    ]
+  },
+  {
+    id: 9, thumbnail: 'rankly-ig-cercle-09.png',
+    frames: [
+      { text: 'Tu vari pelnīt vairāk.', startSec: 7, endSec: 12, fontSize: 64, color: '#E8E8E8', font: 'sans', align: 'center' },
+      { text: 'Šodien.', startSec: 12, endSec: 18, fontSize: 120, color: '#E8E8E8', font: 'sans', align: 'center' },
+      { text: 'Ar vienu lēmumu.', startSec: 18, endSec: 24, fontSize: 64, color: '#6B6B6B', font: 'sans', align: 'center' },
+      { text: 'rankly.lv', startSec: 24, endSec: 30, fontSize: 56, color: '#C8FF00', font: 'mono', align: 'center' },
+    ]
+  },
+];
