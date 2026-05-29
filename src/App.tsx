@@ -7,6 +7,7 @@ import { NelasitPage } from "@/pages/NelasitPage";
 import { MozaikaGenerator } from "@/mozaika/MozaikaGenerator";
 import { VideoGenerator } from "@/video/VideoGenerator";
 import { MaterialGenerator } from "@/materials/MaterialGenerator";
+import { ProfileGenerator } from "@/materials/profile/ProfileGenerator";
 
 const WebsiteBlock = lazy(() => import("@/components/sections/WebsiteBlock").then((m) => ({ default: m.WebsiteBlock })));
 const LeadGenBlock = lazy(() => import("@/components/sections/LeadGenBlock").then((m) => ({ default: m.LeadGenBlock })));
@@ -48,6 +49,10 @@ function ScrollToHash() {
 }
 
 export function App() {
+  if (window.location.pathname.startsWith("/profile")) {
+    return <ProfileGenerator />;
+  }
+
   if (window.location.pathname.startsWith("/materials")) {
     return <MaterialGenerator />;
   }
