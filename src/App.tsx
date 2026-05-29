@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "sonner";
 import { Navbar } from "@/components/landing/Navbar";
@@ -13,6 +14,26 @@ import { NelasitPage } from "@/pages/NelasitPage";
 
 const queryClient = new QueryClient();
 
+function ScrollToHash() {
+  useEffect(() => {
+    const scrollToHash = () => {
+      const hash = window.location.hash;
+      if (!hash) return;
+      const timer = setTimeout(() => {
+        const el = document.getElementById(hash.replace("#", ""));
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100);
+      return () => clearTimeout(timer);
+    };
+
+    scrollToHash();
+    window.addEventListener("hashchange", scrollToHash);
+    return () => window.removeEventListener("hashchange", scrollToHash);
+  }, []);
+
+  return null;
+}
+
 export function App() {
   if (window.location.pathname.startsWith("/nelasit")) {
     return <NelasitPage />
@@ -20,6 +41,7 @@ export function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <ScrollToHash />
       <div className="min-h-screen bg-background text-foreground">
         <Toaster theme="dark" position="top-center" richColors />
         <Navbar />

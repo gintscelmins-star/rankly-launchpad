@@ -25,7 +25,7 @@ export function Hero() {
 
           <div className="mt-8 flex flex-col gap-3 items-start">
             <a
-              href="#contact"
+              href="#kontakti"
               className="inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-4 font-bold text-primary-foreground transition-transform hover:scale-105"
             >
               {cta}

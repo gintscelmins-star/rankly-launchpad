@@ -84,7 +84,14 @@
     border-color: var(--color-border);
   }
   html {
+    scroll-behavior: smooth;
     background-color: var(--color-background);
+  }
+  #majaslapa,
+  #leadgen,
+  #ai,
+  #kontakti {
+    scroll-margin-top: 80px;
   }
   body {
     background-color: var(--color-background);
