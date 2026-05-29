@@ -48,7 +48,7 @@ export function MozaikaTileB({
         r={900}
         fill="none"
         stroke="#CC0000"
-        strokeWidth="3"
+        strokeWidth="8"
       />
     </svg>
   );
