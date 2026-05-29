@@ -1,8 +1,8 @@
-import { Composition } from 'remotion';
+import { Composition, registerRoot } from 'remotion';
 import { VideoComposition } from './VideoComposition';
 import { VIDEOS } from '../video/videoData';
 
-export const RemotionRoot = () => (
+const RemotionRoot = () => (
   <>
     {VIDEOS.map((video) => (
       <Composition
@@ -18,3 +18,5 @@ export const RemotionRoot = () => (
     ))}
   </>
 );
+
+registerRoot(RemotionRoot);
