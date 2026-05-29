@@ -4,6 +4,7 @@ import { Navbar } from "@/components/landing/Navbar";
 import { Hero } from "@/components/landing/Hero";
 import { MobileCTA } from "@/components/landing/MobileCTA";
 import { NelasitPage } from "@/pages/NelasitPage";
+import { MozaikaGenerator } from "@/mozaika/MozaikaGenerator";
 
 const WebsiteBlock = lazy(() => import("@/components/sections/WebsiteBlock").then((m) => ({ default: m.WebsiteBlock })));
 const LeadGenBlock = lazy(() => import("@/components/sections/LeadGenBlock").then((m) => ({ default: m.LeadGenBlock })));
@@ -45,6 +46,10 @@ function ScrollToHash() {
 }
 
 export function App() {
+  if (window.location.pathname.startsWith("/mozaika")) {
+    return <MozaikaGenerator />;
+  }
+
   if (window.location.pathname.startsWith("/nelasit")) {
     return <NelasitPage />;
   }
