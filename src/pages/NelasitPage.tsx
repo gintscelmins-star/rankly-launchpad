@@ -138,14 +138,6 @@ export function NelasitPage() {
 
         <p style={P}>Melville šo kodu atceļ.</p>
 
-        <p style={P}>
-          Viņa noziedznieki dzīvo kārtīgos, gandrīz asketiskos dzīvokļos. Viņa policisti strādā
-          drūmās, novārtā atstātās biroja telpās. Vizuālā vide nedod morālu novērtējumu par
-          cilvēku, kurš tajā atrodas.
-        </p>
-
-        <p style={P}>Tas nav nejauši. Tas ir filozofisks apgalvojums:</p>
-
         <p style={{ ...P, color: "#C8C8C8" }}>
           <Hl>Telpa ir neitrāla sistēma.</Hl> Morāle ir cilvēka projekcija uz telpu, nevis telpas
           īpašums.
