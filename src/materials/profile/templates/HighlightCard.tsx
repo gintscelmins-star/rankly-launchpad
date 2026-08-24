@@ -1,5 +1,5 @@
-import React from 'react';
-import type { HighlightItem } from '../profileData';
+import React from "react";
+import type { HighlightItem } from "../profileData";
 
 const SIZE = 1080;
 const C = SIZE / 2;
@@ -15,8 +15,15 @@ export function HighlightCard({
   const { bg, icon, label, circle } = item;
 
   const circleEl = circle.show ? (
-    circle.style === 'full' ? (
-      <circle cx={C} cy={C} r={R} fill="none" stroke={circle.color} strokeWidth={circle.strokeWidth} />
+    circle.style === "full" ? (
+      <circle
+        cx={C}
+        cy={C}
+        r={R}
+        fill="none"
+        stroke={circle.color}
+        strokeWidth={circle.strokeWidth}
+      />
     ) : (
       // partial — tikai apakšējā pusīte (arc no 180° līdz 360°)
       <path
@@ -35,17 +42,17 @@ export function HighlightCard({
         width: SIZE,
         height: SIZE,
         background: bg,
-        position: 'relative',
-        overflow: 'hidden',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
+        position: "relative",
+        overflow: "hidden",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
       }}
     >
       {/* SVG aplis */}
       {circle.show && (
-        <svg style={{ position: 'absolute', inset: 0 }} width={SIZE} height={SIZE}>
+        <svg style={{ position: "absolute", inset: 0 }} width={SIZE} height={SIZE}>
           {circleEl}
         </svg>
       )}

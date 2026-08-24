@@ -1,109 +1,57 @@
-<!DOCTYPE html>
-<html lang="lv" class="dark">
+<!doctype html>
+<html lang="en" class="dark">
   <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MPBBNQKM');</script>
-    <!-- End Google Tag Manager -->
-
-    <!-- Google Ads (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17991979091"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-17991979091');
-    </script>
-    <!-- End Google Ads -->
-
-    <!-- Google Ads Conversion: Potenciālā pirkuma veidlapas iesniegšana -->
-    <script>
-      function gtag_report_conversion(url) {
-        var callback = function () {
-          if (typeof(url) != 'undefined') { window.location = url; }
-        };
-        gtag('event', 'conversion', {
-          'send_to': 'AW-17991979091/-LLTCIbptLQcENOgn4ND',
-          'value': 50.0,
-          'currency': 'EUR',
-          'event_callback': callback
-        });
-        return false;
-      }
-    </script>
-    <!-- End Google Ads Conversion -->
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/favicon.svg" />
-
-    <!-- Primary meta -->
-    <title>Rankly — Web Aģentūra Rīgā | Mājaslapa €50/mēn</title>
-    <meta name="description" content="Rankly izveido augstas konversijas mājaslapas Latvijas B2B uzņēmumiem. Demo 24h laikā. Sākuma cena €50/mēn. Autoservisi, zobārstniecības, ēdināšana." />
-    <meta name="keywords" content="web aģentūra Rīgā, mājaslapa Latvija, web dizains, SEO optimīzācija, Google Ads, Rankly" />
+    <meta
+      name="description"
+      content="Rankly helps businesses access potential commercial locations across Estonia, Latvia and Lithuania through location sourcing, market entry, lease negotiation and local operations."
+    />
+    <meta
+      name="keywords"
+      content="specialised leasing Baltics, commercial locations Baltics, vending locations Latvia, automated retail locations, pop-up retail Baltics, commercial space activation, Baltic market entry partner"
+    />
     <meta name="author" content="Rankly" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://www.rankly.lv" />
-
-    <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.rankly.lv" />
-    <meta property="og:title" content="Rankly — Web Aģentūra Rīgā" />
-    <meta property="og:description" content="Augstas konversijas mājaslapas Latvijas uzņēmumiem. Demo 24h laikā. Sākuma cena €50/mēn." />
-    <meta property="og:image" content="https://www.rankly.lv/og-image.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:locale" content="lv_LV" />
+    <meta property="og:title" content="Rankly — Specialised Leasing for Baltic Commercial Locations" />
+    <meta
+      property="og:description"
+      content="Rankly helps businesses access potential commercial locations across Estonia, Latvia and Lithuania through location sourcing, market entry, lease negotiation and local operations."
+    />
+    <meta property="og:image" content="/og-image.png" />
     <meta property="og:site_name" content="Rankly" />
-
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Rankly — Web Aģentūra Rīgā" />
-    <meta name="twitter:description" content="Augstas konversijas mājaslapas Latvijas uzņēmumiem. Demo 24h laikā." />
-    <meta name="twitter:image" content="https://www.rankly.lv/og-image.png" />
-
-    <!-- Schema.org LocalBusiness JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Rankly",
-      "url": "https://www.rankly.lv",
-      "logo": "https://www.rankly.lv/favicon.svg",
-      "description": "Web aģentūra Rīgā. Izveidojam augstas konversijas mājaslapas Latvijas B2B uzņēmumiem.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Rīga",
-        "addressCountry": "LV"
-      },
-      "areaServed": {
-        "@type": "Country",
-        "name": "Latvia"
-      },
-      "serviceType": ["Web dizains", "SEO optimīzācija", "Google Ads", "Mājaslapu izstrāde"],
-      "priceRange": "€€",
-      "sameAs": []
-    }
-    </script>
-
-    <!-- Fonts: Outfit + Special Elite, non-blocking -->
+    <meta name="twitter:title" content="Rankly — Specialised Leasing for Baltic Commercial Locations" />
+    <meta
+      name="twitter:description"
+      content="Rankly helps businesses access potential commercial locations across Estonia, Latvia and Lithuania."
+    />
+    <meta name="twitter:image" content="/og-image.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <title>Rankly — Specialised Leasing for Baltic Commercial Locations</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Special+Elite&family=IBM+Plex+Mono:wght@400;500&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Special+Elite&family=IBM+Plex+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Special+Elite&family=IBM+Plex+Mono:wght@400;500&display=swap" /></noscript>
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&display=swap"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&display=swap"
+      />
+    </noscript>
   </head>
-  <body class="bg-background text-foreground">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPBBNQKM"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+  <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

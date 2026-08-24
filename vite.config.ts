@@ -13,8 +13,8 @@ export default defineConfig(({ mode }) => ({
   ].filter(Boolean),
   server: {
     host: "::",
-    port: 8080,
-    strictPort: true,
+    port: 5173,
+    strictPort: false,
   },
   build: {
     rollupOptions: {

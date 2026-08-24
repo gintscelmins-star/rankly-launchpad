@@ -1,4 +1,4 @@
-import { content } from "@/data/content"
+import { content } from "@/data/content";
 
 const flowSteps = [
   { top: true, label: "Google Ads", arrow: "→", label2: "Mājaslapa" },
@@ -6,10 +6,10 @@ const flowSteps = [
   { label: "CRM automātiski" },
   { label: "AI outreach → Klients atbild" },
   { label: "Tu saņem zvanu ✓", isLast: true },
-]
+];
 
 export function LeadGenBlock() {
-  const { title, subtitle, pillars, pricing, statement } = content.leadgen
+  const { title, subtitle, pillars, pricing, statement } = content.leadgen;
 
   return (
     <section id="leadgen" className="py-12 md:py-20 lg:py-32 border-t border-hairline scroll-mt-20">
@@ -56,27 +56,30 @@ export function LeadGenBlock() {
             </div>
 
             {/* Vertical flow steps */}
-            {["Lead ienāk", "CRM automātiski", "AI outreach → Klients atbild", "Tu saņem zvanu ✓"].map(
-              (label, i, arr) => (
-                <div key={label} className="flex flex-col items-center w-full">
-                  <div
-                    className={`rounded-xl border px-4 py-2 text-sm font-medium w-full text-center ${
-                      i === arr.length - 1
-                        ? "border-primary/60 bg-primary/15 text-foreground"
-                        : "border-hairline bg-card text-foreground"
-                    }`}
-                  >
-                    {label}
-                  </div>
-                  {i < arr.length - 1 && (
-                    <div className="flex flex-col items-center" style={{ height: "32px" }}>
-                      <div className="w-px flex-1 bg-hairline" />
-                      <span className="text-muted-foreground text-xs">↓</span>
-                    </div>
-                  )}
+            {[
+              "Lead ienāk",
+              "CRM automātiski",
+              "AI outreach → Klients atbild",
+              "Tu saņem zvanu ✓",
+            ].map((label, i, arr) => (
+              <div key={label} className="flex flex-col items-center w-full">
+                <div
+                  className={`rounded-xl border px-4 py-2 text-sm font-medium w-full text-center ${
+                    i === arr.length - 1
+                      ? "border-primary/60 bg-primary/15 text-foreground"
+                      : "border-hairline bg-card text-foreground"
+                  }`}
+                >
+                  {label}
                 </div>
-              )
-            )}
+                {i < arr.length - 1 && (
+                  <div className="flex flex-col items-center" style={{ height: "32px" }}>
+                    <div className="w-px flex-1 bg-hairline" />
+                    <span className="text-muted-foreground text-xs">↓</span>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
 
@@ -107,5 +110,5 @@ export function LeadGenBlock() {
         </blockquote>
       </div>
     </section>
-  )
+  );
 }

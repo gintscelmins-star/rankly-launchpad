@@ -1,9 +1,9 @@
-import { content } from "@/data/content"
-import { TypewriterText } from "@/components/ui/TypewriterText"
-import { NodeGraph } from "@/components/ui/NodeGraph"
+import { content } from "@/data/content";
+import { TypewriterText } from "@/components/ui/TypewriterText";
+import { NodeGraph } from "@/components/ui/NodeGraph";
 
 export function Hero() {
-  const { headline, typewriterWords, sublineTemplate, cta, microcopy } = content.hero
+  const { headline, typewriterWords, sublineTemplate, cta, microcopy } = content.hero;
 
   return (
     <section id="hero" className="pt-32 pb-16 md:pt-40 md:pb-24 scroll-mt-20">
@@ -44,5 +44,5 @@ export function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }

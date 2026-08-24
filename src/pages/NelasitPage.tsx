@@ -1,4 +1,4 @@
-import type { ReactNode } from "react"
+import type { ReactNode } from "react";
 
 function Hl({ children }: { children: ReactNode }) {
   return (
@@ -12,7 +12,7 @@ function Hl({ children }: { children: ReactNode }) {
     >
       {children}
     </span>
-  )
+  );
 }
 
 const PAGE: React.CSSProperties = {
@@ -22,22 +22,21 @@ const PAGE: React.CSSProperties = {
   fontFamily: "'IBM Plex Mono', 'Courier New', monospace",
   fontSize: "15px",
   lineHeight: "1.85",
-}
+};
 
 const INNER: React.CSSProperties = {
   maxWidth: "720px",
   margin: "0 auto",
   padding: "80px 28px 140px",
-}
+};
 
-const P:  React.CSSProperties = { marginTop: "28px" }
-const PL: React.CSSProperties = { marginTop: "44px" }
+const P: React.CSSProperties = { marginTop: "28px" };
+const PL: React.CSSProperties = { marginTop: "44px" };
 
 export function NelasitPage() {
   return (
     <div style={PAGE}>
       <div style={INNER}>
-
         {/* Back link */}
         <div style={{ marginBottom: "56px" }}>
           <a
@@ -72,9 +71,9 @@ export function NelasitPage() {
 
         {/* ── Intro ── */}
         <p>
-          Žana Pjēra Melvila kino ērā Alens Delons radīja tēlu, kas operē ārpus morāles un
-          emocijām. Ne nonchalant — patiess, <Hl>tīrs tukšums</Hl>. <Hl>Amor fati</Hl> — bez
-          nožēlas, bez eiforijas. Emocijas ir mainīgais, kas rada kļūdas un iznīcina sistēmas.
+          Žana Pjēra Melvila kino ērā Alens Delons radīja tēlu, kas operē ārpus morāles un emocijām.
+          Ne nonchalant — patiess, <Hl>tīrs tukšums</Hl>. <Hl>Amor fati</Hl> — bez nožēlas, bez
+          eiforijas. Emocijas ir mainīgais, kas rada kļūdas un iznīcina sistēmas.
         </p>
 
         <p style={P}>
@@ -95,13 +94,12 @@ export function NelasitPage() {
 
         <p style={P}>
           Ja tu šeit meklēji manus pakalpojumus vai produktus, šo sadaļu vari droši aizvērt. Te nav
-          nekā pārdodama. Šis ir vienkārši fona process.{" "}
-          <Hl>Kultūra vienmēr uzvar procesus.</Hl>
+          nekā pārdodama. Šis ir vienkārši fona process. <Hl>Kultūra vienmēr uzvar procesus.</Hl>
         </p>
 
         <p style={P}>
-          Melville bija apsēsts ar japāņu samuraju kultūru — ne romantizētajā formā, bet tās
-          kodolā: pilnīga pienākuma izpilde bez emocionāla troksņa.
+          Melville bija apsēsts ar japāņu samuraju kultūru — ne romantizētajā formā, bet tās kodolā:
+          pilnīga pienākuma izpilde bez emocionāla troksņa.
         </p>
 
         <p style={P}>
@@ -109,13 +107,22 @@ export function NelasitPage() {
           liekvārdīgais ir vājums. <Hl>Darbība bez komentāra. Forma bez dekorācijas.</Hl>
         </p>
 
-        <p style={PL}><Hl>Tā ir ētiska pozīcija.</Hl></p>
+        <p style={PL}>
+          <Hl>Tā ir ētiska pozīcija.</Hl>
+        </p>
 
         {/* ── Eksistenciālisms ── */}
         <p style={{ ...PL, color: "#4A4A4A", fontSize: "11px", letterSpacing: "0.2em" }}>
           eksistenciālisms
         </p>
-        <div style={{ height: "1px", backgroundColor: "#141414", marginTop: "14px", marginBottom: "28px" }} />
+        <div
+          style={{
+            height: "1px",
+            backgroundColor: "#141414",
+            marginTop: "14px",
+            marginBottom: "28px",
+          }}
+        />
 
         <p>
           Sartra un Kamī Francija bija Melvila intelektuālais ūdens. Eksistenciālisma centrālais
@@ -138,6 +145,14 @@ export function NelasitPage() {
 
         <p style={P}>Melville šo kodu atceļ.</p>
 
+        <p style={P}>
+          Viņa noziedznieki dzīvo kārtīgos, gandrīz asketiskos dzīvokļos. Viņa policisti strādā
+          drūmās, novārtā atstātās biroja telpās. Vizuālā vide nedod morālu novērtējumu par cilvēku,
+          kurš tajā atrodas.
+        </p>
+
+        <p style={P}>Tas nav nejauši. Tas ir filozofisks apgalvojums:</p>
+
         <p style={{ ...P, color: "#C8C8C8" }}>
           <Hl>Telpa ir neitrāla sistēma.</Hl> Morāle ir cilvēka projekcija uz telpu, nevis telpas
           īpašums.
@@ -145,15 +160,15 @@ export function NelasitPage() {
 
         <p style={P}>
           Kad tu noņem vizuālos morāles signālus, skatītājs paliek viens ar savu spriedumu — bez
-          atbalsta, bez vadlīnijām. Un tas ir neērti. Jo lielākā daļa morāles ikdienā nav
-          pārliecība — <Hl>tā ir imitācija apkārtējo reakcijās.</Hl>
+          atbalsta, bez vadlīnijām. Un tas ir neērti. Jo lielākā daļa morāles ikdienā nav pārliecība
+          — <Hl>tā ir imitācija apkārtējo reakcijās.</Hl>
         </p>
 
         <p style={P}>Jef Costello Le Samouraï ieiet istabā. Nogalina vīru. Iziet.</p>
 
         <p style={P}>
-          Nav muzikāla sasprindzinājuma pirms. Nav emocionāla atslābuma pēc. Kamera fiksē darbību
-          ar tādu pašu distanci, ar kādu tā fiksētu cilvēku, kurš ielej kafiju.
+          Nav muzikāla sasprindzinājuma pirms. Nav emocionāla atslābuma pēc. Kamera fiksē darbību ar
+          tādu pašu distanci, ar kādu tā fiksētu cilvēku, kurš ielej kafiju.
         </p>
 
         <p style={P}>
@@ -171,8 +186,7 @@ export function NelasitPage() {
         </p>
 
         <p style={P}>
-          Melville atņem šo segumu. Tas, kas paliek, ir{" "}
-          <Hl>tīrā darbība un tīrais diskomforts.</Hl>
+          Melville atņem šo segumu. Tas, kas paliek, ir <Hl>tīrā darbība un tīrais diskomforts.</Hl>
         </p>
 
         <p style={P}>
@@ -182,9 +196,9 @@ export function NelasitPage() {
         </p>
 
         <p style={P}>
-          Samuraju kodekss, ko Melville apzināti citē, darbojas identiskā loģikā. Bushido nav
-          ētika — tā ir tehnika. Tā neinteresējas par to, vai darbība ir morāli pamatota. Tā
-          interesējas par to, vai darbība tiek veikta ar pilnu apņemšanos un precizitāti.
+          Samuraju kodekss, ko Melville apzināti citē, darbojas identiskā loģikā. Bushido nav ētika
+          — tā ir tehnika. Tā neinteresējas par to, vai darbība ir morāli pamatota. Tā interesējas
+          par to, vai darbība tiek veikta ar pilnu apņemšanos un precizitāti.
         </p>
 
         <p style={PL}>Šeit rodas Melvila filozofiskā provokācija:</p>
@@ -203,8 +217,7 @@ export function NelasitPage() {
           līdz galam, iespējams, Tu jau nojauti nepieciešamību sajust un satvert divas nebijušas
           sajūtas, kuras rodas pēc šī konspekta izlasīšanas.
         </p>
-
       </div>
     </div>
-  )
+  );
 }

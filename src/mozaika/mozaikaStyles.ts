@@ -1,11 +1,11 @@
 export const M = {
   colors: {
-    black:   '#0A0A0A',
-    white:   '#E8E8E8',
-    accent:  '#C8FF00',
-    red:     '#CC0000',
-    gray:    '#6B6B6B',
-    dimgray: '#2D2D2D',
+    black: "#0A0A0A",
+    white: "#E8E8E8",
+    accent: "#C8FF00",
+    red: "#CC0000",
+    gray: "#6B6B6B",
+    dimgray: "#2D2D2D",
   },
   fonts: {
     mono: "'Courier New', 'Courier', monospace",

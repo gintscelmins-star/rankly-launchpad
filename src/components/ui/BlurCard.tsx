@@ -1,6 +1,6 @@
 interface BlurCardProps {
-  title: string
-  content: string
+  title: string;
+  content: string;
 }
 
 export function BlurCard({ title, content }: BlurCardProps) {
@@ -35,5 +35,5 @@ export function BlurCard({ title, content }: BlurCardProps) {
         </div>
       </div>
     </div>
-  )
+  );
 }

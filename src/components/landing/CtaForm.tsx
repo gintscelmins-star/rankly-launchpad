@@ -1,20 +1,23 @@
-import { useEffect, useState } from "react"
-import { useForm } from "react-hook-form"
-import { toast } from "sonner"
-import { Input } from "@/components/ui/input"
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { toast } from "sonner";
+import { Input } from "@/components/ui/input";
 
-type ServiceId = "majaslapa" | "leadgen" | "ai"
-type FormValues = { name: string; email: string; company: string; message?: string }
+type ServiceId = "majaslapa" | "leadgen" | "ai";
+type FormValues = { name: string; email: string; company: string; message?: string };
 
-const WEBHOOK_URL = "https://formspree.io/f/mzdovwrg"
+const WEBHOOK_URL = "https://formspree.io/f/mzdovwrg";
 
-const CONFIG: Record<ServiceId, {
-  fullLabel: string
-  textareaLabel: string | null
-  textareaRequired: boolean
-  buttonText: string
-  successMessage: string
-}> = {
+const CONFIG: Record<
+  ServiceId,
+  {
+    fullLabel: string;
+    textareaLabel: string | null;
+    textareaRequired: boolean;
+    buttonText: string;
+    successMessage: string;
+  }
+> = {
   majaslapa: {
     fullLabel: "Mājaslapa Demo — 24h laikā",
     textareaLabel: null,
@@ -36,32 +39,32 @@ const CONFIG: Record<ServiceId, {
     buttonText: "Aprakstīt AI uzdevumu →",
     successMessage: "Paldies! Izskatīsim jūsu AI uzdevumu.",
   },
-}
+};
 
 const TAB_LABELS: Record<ServiceId, string> = {
   majaslapa: "Mājaslapa",
   leadgen: "Lead Gen",
   ai: "AI",
-}
+};
 
 export function CtaForm() {
-  const [service, setService] = useState<ServiceId>("majaslapa")
+  const [service, setService] = useState<ServiceId>("majaslapa");
 
   useEffect(() => {
-    const hash = window.location.hash
-    if (hash === "#majaslapa") setService("majaslapa")
-    else if (hash === "#leadgen") setService("leadgen")
-    else if (hash === "#ai") setService("ai")
-  }, [])
+    const hash = window.location.hash;
+    if (hash === "#majaslapa") setService("majaslapa");
+    else if (hash === "#leadgen") setService("leadgen");
+    else if (hash === "#ai") setService("ai");
+  }, []);
 
-  const cfg = CONFIG[service]
+  const cfg = CONFIG[service];
 
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors, isSubmitting },
-  } = useForm<FormValues>({ shouldUnregister: true })
+  } = useForm<FormValues>({ shouldUnregister: true });
 
   const onSubmit = async (data: FormValues) => {
     try {
@@ -69,19 +72,19 @@ export function CtaForm() {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({ ...data, service }),
-      })
-      if (!res.ok) throw new Error()
-      window.dataLayer = window.dataLayer || []
-      window.dataLayer.push({ event: "cta_form_success", service })
+      });
+      if (!res.ok) throw new Error();
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: "cta_form_success", service });
       if (typeof window.gtag_report_conversion === "function") {
-        window.gtag_report_conversion()
+        window.gtag_report_conversion();
       }
-      toast.success(cfg.successMessage)
-      reset()
+      toast.success(cfg.successMessage);
+      reset();
     } catch {
-      toast.error("Kļūda. Lūdzu mēģini vēlreiz.")
+      toast.error("Kļūda. Lūdzu mēģini vēlreiz.");
     }
-  }
+  };
 
   return (
     <section id="kontakti" className="py-12 md:py-20 lg:py-32 bg-card scroll-mt-20">
@@ -134,7 +137,9 @@ export function CtaForm() {
                 maxLength: 255,
               })}
             />
-            {errors.email && <p className="text-xs text-destructive mt-1">{errors.email.message}</p>}
+            {errors.email && (
+              <p className="text-xs text-destructive mt-1">{errors.email.message}</p>
+            )}
           </div>
           <div>
             <Input
@@ -142,7 +147,9 @@ export function CtaForm() {
               className="h-12 bg-background border-hairline"
               {...register("company", { required: "Lūdzu ievadi uzņēmumu", maxLength: 255 })}
             />
-            {errors.company && <p className="text-xs text-destructive mt-1">{errors.company.message}</p>}
+            {errors.company && (
+              <p className="text-xs text-destructive mt-1">{errors.company.message}</p>
+            )}
           </div>
 
           {cfg.textareaLabel && (
@@ -186,5 +193,5 @@ export function CtaForm() {
         </p>
       </div>
     </section>
-  )
+  );
 }

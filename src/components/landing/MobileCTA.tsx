@@ -1,8 +1,8 @@
 export function MobileCTA() {
   const scrollToContact = (e: React.MouseEvent) => {
-    e.preventDefault()
-    document.getElementById("kontakti")?.scrollIntoView({ behavior: "smooth" })
-  }
+    e.preventDefault();
+    document.getElementById("kontakti")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden flex" style={{ height: "56px" }}>
@@ -23,5 +23,5 @@ export function MobileCTA() {
         WhatsApp →
       </a>
     </div>
-  )
+  );
 }

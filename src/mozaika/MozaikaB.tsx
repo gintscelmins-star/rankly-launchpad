@@ -1,28 +1,30 @@
-import React from 'react';
+import React from "react";
 
 const wrapperBase: React.CSSProperties = {
-  background: '#0A0A0A',
+  background: "#0A0A0A",
   width: 1080,
   height: 1080,
-  position: 'relative',
-  overflow: 'hidden',
+  position: "relative",
+  overflow: "hidden",
 };
 
 const txt: React.CSSProperties = {
   fontFamily: "'Courier New', 'Courier', monospace",
   fontSize: 24,
-  color: '#9A9A9A',
+  color: "#9A9A9A",
   lineHeight: 1.85,
 };
 
 function Hl({ children }: { children: React.ReactNode }) {
   return (
-    <span style={{
-      textDecoration: 'underline',
-      textDecorationColor: '#9A2020',
-      textDecorationThickness: '1px',
-      textUnderlineOffset: '4px',
-    }}>
+    <span
+      style={{
+        textDecoration: "underline",
+        textDecorationColor: "#9A2020",
+        textDecorationThickness: "1px",
+        textUnderlineOffset: "4px",
+      }}
+    >
       {children}
     </span>
   );
@@ -41,15 +43,8 @@ export function MozaikaTileB({
   const localCy = 1620 - row * 1080;
 
   const circle = (
-    <svg style={{ position: 'absolute', inset: 0 }} width={1080} height={1080}>
-      <circle
-        cx={localCx}
-        cy={localCy}
-        r={900}
-        fill="none"
-        stroke="#CC0000"
-        strokeWidth="8"
-      />
+    <svg style={{ position: "absolute", inset: 0 }} width={1080} height={1080}>
+      <circle cx={localCx} cy={localCy} r={900} fill="none" stroke="#CC0000" strokeWidth="8" />
     </svg>
   );
 
@@ -58,7 +53,18 @@ export function MozaikaTileB({
     return (
       <div ref={divRef} style={wrapperBase}>
         {circle}
-        <div style={{ position: 'absolute', bottom: 60, left: 60, fontFamily: "'Helvetica Neue', Arial, sans-serif", fontWeight: 700, fontSize: 120, color: '#E8E8E8', lineHeight: 1 }}>
+        <div
+          style={{
+            position: "absolute",
+            bottom: 60,
+            left: 60,
+            fontFamily: "'Helvetica Neue', Arial, sans-serif",
+            fontWeight: 700,
+            fontSize: 120,
+            color: "#E8E8E8",
+            lineHeight: 1,
+          }}
+        >
           LE
         </div>
       </div>
@@ -71,10 +77,9 @@ export function MozaikaTileB({
     return (
       <div ref={divRef} style={wrapperBase}>
         {circle}
-        <div style={{ position: 'absolute', top: 420, left: 60, right: 60, ...txt }}>
-          "Le Cercle Rouge" laupīšanas aina ilgst vairāk nekā 25 minūtes bez neviena vārda.
-          Katra kustība kalpo funkcionālam mērķim.{' '}
-          <Hl>Tukša runāšana ir izslēgta.</Hl>
+        <div style={{ position: "absolute", top: 420, left: 60, right: 60, ...txt }}>
+          "Le Cercle Rouge" laupīšanas aina ilgst vairāk nekā 25 minūtes bez neviena vārda. Katra
+          kustība kalpo funkcionālam mērķim. <Hl>Tukša runāšana ir izslēgta.</Hl>
         </div>
       </div>
     );
@@ -85,7 +90,18 @@ export function MozaikaTileB({
     return (
       <div ref={divRef} style={wrapperBase}>
         {circle}
-        <div style={{ position: 'absolute', top: 60, right: 60, fontFamily: "'Helvetica Neue', Arial, sans-serif", fontWeight: 700, fontSize: 80, color: '#CC0000', lineHeight: 1 }}>
+        <div
+          style={{
+            position: "absolute",
+            top: 60,
+            right: 60,
+            fontFamily: "'Helvetica Neue', Arial, sans-serif",
+            fontWeight: 700,
+            fontSize: 80,
+            color: "#CC0000",
+            lineHeight: 1,
+          }}
+        >
           ROUGE
         </div>
       </div>
@@ -97,7 +113,20 @@ export function MozaikaTileB({
     return (
       <div ref={divRef} style={wrapperBase}>
         {circle}
-        <div style={{ position: 'absolute', top: '50%', left: 60, transform: 'translateY(-50%)', writingMode: 'vertical-rl', fontFamily: "'Helvetica Neue', Arial, sans-serif", fontWeight: 700, fontSize: 96, color: '#E8E8E8', lineHeight: 1 }}>
+        <div
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: 60,
+            transform: "translateY(-50%)",
+            writingMode: "vertical-rl",
+            fontFamily: "'Helvetica Neue', Arial, sans-serif",
+            fontWeight: 700,
+            fontSize: 96,
+            color: "#E8E8E8",
+            lineHeight: 1,
+          }}
+        >
           CERCLE
         </div>
       </div>
@@ -109,10 +138,32 @@ export function MozaikaTileB({
     return (
       <div ref={divRef} style={wrapperBase}>
         {circle}
-        <div style={{ position: 'absolute', top: 80, left: '50%', transform: 'translateX(-50%)', fontFamily: "'Courier New', monospace", fontSize: 24, color: '#CC0000', whiteSpace: 'nowrap' }}>
+        <div
+          style={{
+            position: "absolute",
+            top: 80,
+            left: "50%",
+            transform: "translateX(-50%)",
+            fontFamily: "'Courier New', monospace",
+            fontSize: 24,
+            color: "#CC0000",
+            whiteSpace: "nowrap",
+          }}
+        >
           1970
         </div>
-        <div style={{ position: 'absolute', bottom: 80, left: '50%', transform: 'translateX(-50%)', fontFamily: "'Courier New', monospace", fontSize: 14, color: '#4A4A4A', whiteSpace: 'nowrap' }}>
+        <div
+          style={{
+            position: "absolute",
+            bottom: 80,
+            left: "50%",
+            transform: "translateX(-50%)",
+            fontFamily: "'Courier New', monospace",
+            fontSize: 14,
+            color: "#4A4A4A",
+            whiteSpace: "nowrap",
+          }}
+        >
           Jean-Pierre Melville
         </div>
       </div>
@@ -125,12 +176,22 @@ export function MozaikaTileB({
     return (
       <div ref={divRef} style={wrapperBase}>
         {circle}
-        <div style={{ position: 'absolute', top: 60, left: 240, right: 60, bottom: 60, display: 'flex', alignItems: 'center' }}>
+        <div
+          style={{
+            position: "absolute",
+            top: 60,
+            left: 240,
+            right: 60,
+            bottom: 60,
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
           <p style={{ ...txt, margin: 0 }}>
-            <Hl>Telpa ir neitrāla sistēma.</Hl> Morāle ir cilvēka projekcija uz telpu, nevis telpas īpašums.
-            {' '}Kad tu noņem vizuālos morāles signālus, skatītājs paliek viens ar savu spriedumu — bez atbalsta, bez vadlīnijām.
-            {' '}Un tas ir neērti. Jo lielākā daļa morāles ikdienā nav pārliecība —{' '}
-            <Hl>tā ir imitācija apkārtējo reakcijās.</Hl>
+            <Hl>Telpa ir neitrāla sistēma.</Hl> Morāle ir cilvēka projekcija uz telpu, nevis telpas
+            īpašums. Kad tu noņem vizuālos morāles signālus, skatītājs paliek viens ar savu
+            spriedumu — bez atbalsta, bez vadlīnijām. Un tas ir neērti. Jo lielākā daļa morāles
+            ikdienā nav pārliecība — <Hl>tā ir imitācija apkārtējo reakcijās.</Hl>
           </p>
         </div>
       </div>
@@ -142,10 +203,28 @@ export function MozaikaTileB({
     return (
       <div ref={divRef} style={wrapperBase}>
         {circle}
-        <div style={{ position: 'absolute', bottom: 80, left: 60, fontFamily: "'Courier New', monospace", fontSize: 24, color: '#C8FF00' }}>
+        <div
+          style={{
+            position: "absolute",
+            bottom: 80,
+            left: 60,
+            fontFamily: "'Courier New', monospace",
+            fontSize: 24,
+            color: "#C8FF00",
+          }}
+        >
           RANKLY
         </div>
-        <div style={{ position: 'absolute', bottom: 52, left: 60, fontFamily: "'Courier New', monospace", fontSize: 14, color: '#4A4A4A' }}>
+        <div
+          style={{
+            position: "absolute",
+            bottom: 52,
+            left: 60,
+            fontFamily: "'Courier New', monospace",
+            fontSize: 14,
+            color: "#4A4A4A",
+          }}
+        >
           sistema. svira.
         </div>
       </div>
@@ -159,10 +238,10 @@ export function MozaikaTileB({
     return (
       <div ref={divRef} style={wrapperBase}>
         {circle}
-        <div style={{ position: 'absolute', top: 60, left: 60, right: 60, bottom: 380, ...txt }}>
-          Žana Pjēra Melvila kino ērā Alens Delons radīja tēlu, kas operē ārpus morāles un emocijām.
-          {' '}Ne nonchalant — patiess, <Hl>tīrs tukšums</Hl>. <Hl>Amor fati</Hl> — bez nožēlas, bez eiforijas.
-          {' '}Emocijas ir mainīgais, kas rada kļūdas un iznīcina sistēmas.
+        <div style={{ position: "absolute", top: 60, left: 60, right: 60, bottom: 380, ...txt }}>
+          Žana Pjēra Melvila kino ērā Alens Delons radīja tēlu, kas operē ārpus morāles un emocijām.{" "}
+          Ne nonchalant — patiess, <Hl>tīrs tukšums</Hl>. <Hl>Amor fati</Hl> — bez nožēlas, bez
+          eiforijas. Emocijas ir mainīgais, kas rada kļūdas un iznīcina sistēmas.
         </div>
       </div>
     );
@@ -174,14 +253,33 @@ export function MozaikaTileB({
     return (
       <div ref={divRef} style={wrapperBase}>
         {circle}
-        <div style={{ position: 'absolute', top: 60, left: 60, right: 60, bottom: 140, ...txt, fontSize: 22 }}>
-          Ja cilvēks rīkojas perfekti saskaņā ar savu kodu, bet šis kods ir ārpus sabiedriskās morāles sistēmas — ko mēs tiesājam?
-          {' '}Personāžu vai normas, ko viņš nepārkāpj?
-          {' '}Atbilde, ko Melville sniedz ar telpu un kadru — atsakoties iesaistīties emocionālajā spriedumā — ir:{' '}
-          <Hl>jūs tiesājat sevi.</Hl>{' '}
-          Savu nepieciešamību pēc morālas kārtības, kuras garantijas neeksistē.
+        <div
+          style={{
+            position: "absolute",
+            top: 60,
+            left: 60,
+            right: 60,
+            bottom: 140,
+            ...txt,
+            fontSize: 22,
+          }}
+        >
+          Ja cilvēks rīkojas perfekti saskaņā ar savu kodu, bet šis kods ir ārpus sabiedriskās
+          morāles sistēmas — ko mēs tiesājam? Personāžu vai normas, ko viņš nepārkāpj? Atbilde, ko
+          Melville sniedz ar telpu un kadru — atsakoties iesaistīties emocionālajā spriedumā — ir:{" "}
+          <Hl>jūs tiesājat sevi.</Hl> Savu nepieciešamību pēc morālas kārtības, kuras garantijas
+          neeksistē.
         </div>
-        <div style={{ position: 'absolute', bottom: 60, right: 60, fontFamily: "'Courier New', monospace", fontSize: 20, color: '#C8FF00' }}>
+        <div
+          style={{
+            position: "absolute",
+            bottom: 60,
+            right: 60,
+            fontFamily: "'Courier New', monospace",
+            fontSize: 20,
+            color: "#C8FF00",
+          }}
+        >
           rankly.lv
         </div>
       </div>

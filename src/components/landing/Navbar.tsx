@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react"
-import { Menu, X } from "lucide-react"
+import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "Mājaslapa", href: "#majaslapa" },
@@ -7,34 +7,32 @@ const navLinks = [
   { label: "AI", href: "#ai" },
   { label: "Nelasīt", href: "/nelasit" },
   { label: "Kontakti", href: "#kontakti" },
-]
+];
 
 export function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
-  const [mobileOpen, setMobileOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10)
-    onScroll()
-    window.addEventListener("scroll", onScroll)
-    return () => window.removeEventListener("scroll", onScroll)
-  }, [])
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    onScroll();
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const handleNavClick = (href: string, e: React.MouseEvent<HTMLAnchorElement>) => {
-    setMobileOpen(false)
+    setMobileOpen(false);
     if (href.startsWith("/")) {
-      e.preventDefault()
-      window.location.href = href
+      e.preventDefault();
+      window.location.href = href;
     }
     // Hash links: no preventDefault — browser handles scroll natively with scroll-behavior: smooth
-  }
+  };
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-background/70 backdrop-blur-xl border-b border-hairline"
-          : "bg-transparent"
+        scrolled ? "bg-background/70 backdrop-blur-xl border-b border-hairline" : "bg-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -100,5 +98,5 @@ export function Navbar() {
         </nav>
       )}
     </header>
-  )
+  );
 }

@@ -34,16 +34,16 @@ export function NelasitLink() {
           transition: "color 0.2s, border-color 0.2s",
         }}
         onMouseEnter={(e) => {
-          (e.currentTarget as HTMLAnchorElement).style.color = "#9A9A9A"
-          ;(e.currentTarget as HTMLAnchorElement).style.borderColor = "#4A4A4A"
+          (e.currentTarget as HTMLAnchorElement).style.color = "#9A9A9A";
+          (e.currentTarget as HTMLAnchorElement).style.borderColor = "#4A4A4A";
         }}
         onMouseLeave={(e) => {
-          (e.currentTarget as HTMLAnchorElement).style.color = "#6B6B6B"
-          ;(e.currentTarget as HTMLAnchorElement).style.borderColor = "#2D2D2D"
+          (e.currentTarget as HTMLAnchorElement).style.color = "#6B6B6B";
+          (e.currentTarget as HTMLAnchorElement).style.borderColor = "#2D2D2D";
         }}
       >
         lasīt →
       </a>
     </section>
-  )
+  );
 }

@@ -1,5 +1,5 @@
-import React from 'react';
-import type { ProfileVariant } from '../profileData';
+import React from "react";
+import type { ProfileVariant } from "../profileData";
 
 const SIZE = 800;
 const CENTER = SIZE / 2;
@@ -21,17 +21,17 @@ export function ProfileCard({
         width: SIZE,
         height: SIZE,
         background: bg,
-        position: 'relative',
-        overflow: 'hidden',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'column',
+        position: "relative",
+        overflow: "hidden",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "column",
       }}
     >
       {/* SVG aplis */}
       {circle.show && (
-        <svg style={{ position: 'absolute', inset: 0 }} width={SIZE} height={SIZE}>
+        <svg style={{ position: "absolute", inset: 0 }} width={SIZE} height={SIZE}>
           <circle
             cx={CENTER}
             cy={CENTER}
@@ -44,7 +44,7 @@ export function ProfileCard({
       )}
 
       {/* Teksts */}
-      {content.type === 'wordmark' && (
+      {content.type === "wordmark" && (
         <div
           style={{
             fontFamily: content.fontFamily,
@@ -59,8 +59,8 @@ export function ProfileCard({
         </div>
       )}
 
-      {content.type === 'wordmark-accent' && (
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      {content.type === "wordmark-accent" && (
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
           <div
             style={{
               fontFamily: content.fontFamily,
@@ -73,7 +73,7 @@ export function ProfileCard({
           >
             {content.text}
           </div>
-          {'accentLine' in content && content.accentLine && (
+          {"accentLine" in content && content.accentLine && (
             <div
               style={{
                 width: content.accentLine.width,
@@ -86,7 +86,7 @@ export function ProfileCard({
         </div>
       )}
 
-      {content.type === 'monogram' && (
+      {content.type === "monogram" && (
         <div
           style={{
             fontFamily: content.fontFamily,

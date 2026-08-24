@@ -1,8 +1,8 @@
-import { content } from "@/data/content"
-import { BlurCard } from "@/components/ui/BlurCard"
+import { content } from "@/data/content";
+import { BlurCard } from "@/components/ui/BlurCard";
 
 export function AIBlock() {
-  const { warning, title, subtitle, cards, cta, microcopy, statement } = content.ai
+  const { warning, title, subtitle, cards, cta, microcopy, statement } = content.ai;
 
   return (
     <section
@@ -58,5 +58,5 @@ export function AIBlock() {
         </blockquote>
       </div>
     </section>
-  )
+  );
 }

@@ -1,7 +1,7 @@
-import { content } from "@/data/content"
+import { content } from "@/data/content";
 
 export function FooterCTA() {
-  const { headline, cta, microcopy } = content.footer
+  const { headline, cta, microcopy } = content.footer;
 
   return (
     <section className="py-16 md:py-24 lg:py-32 border-t border-hairline text-center">
@@ -18,5 +18,5 @@ export function FooterCTA() {
         <p className="text-sm text-muted-foreground">{microcopy}</p>
       </div>
     </section>
-  )
+  );
 }
