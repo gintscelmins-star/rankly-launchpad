@@ -1,4 +1,5 @@
 # RANKLY — Claude Code Addendum v2
+
 ## Multilingual Website, Complete Rebrand and Removal of Legacy Web-Design Content
 
 Apply this addendum to the existing RANKLY website build prompt. This is a mandatory product, content and code update.
@@ -473,6 +474,7 @@ Unser Standortnetzwerk umfasst verschiedene gewerbliche Umgebungen in Estland, L
 ### Process labels
 
 English:
+
 - Define the requirement
 - Source potential locations
 - Evaluate the opportunity
@@ -480,6 +482,7 @@ English:
 - Launch and operate
 
 Latvian:
+
 - Definēt prasības
 - Atlasīt potenciālās lokācijas
 - Izvērtēt iespēju
@@ -487,6 +490,7 @@ Latvian:
 - Uzsākt un nodrošināt darbību
 
 German:
+
 - Anforderungen definieren
 - Potenzielle Standorte suchen
 - Möglichkeit bewerten
@@ -522,6 +526,7 @@ Translate all form elements naturally.
 ### Operator form
 
 English labels:
+
 - Company name
 - Contact person
 - Email
@@ -535,6 +540,7 @@ English labels:
 - Send request
 
 Latvian labels:
+
 - Uzņēmuma nosaukums
 - Kontaktpersona
 - E-pasts
@@ -548,6 +554,7 @@ Latvian labels:
 - Nosūtīt pieprasījumu
 
 German labels:
+
 - Unternehmensname
 - Kontaktperson
 - E-Mail
@@ -563,6 +570,7 @@ German labels:
 ### Property owner form
 
 English labels:
+
 - Property or company name
 - Contact person
 - Email
@@ -578,6 +586,7 @@ English labels:
 - Submit location
 
 Latvian labels:
+
 - Īpašuma vai uzņēmuma nosaukums
 - Kontaktpersona
 - E-pasts
@@ -593,6 +602,7 @@ Latvian labels:
 - Pieteikt lokāciju
 
 German labels:
+
 - Name der Immobilie oder des Unternehmens
 - Kontaktperson
 - E-Mail

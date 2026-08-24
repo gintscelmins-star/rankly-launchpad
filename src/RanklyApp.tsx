@@ -64,9 +64,9 @@ const copy = {
     },
     home: {
       eyebrow: "SPECIALISED LEASING",
-      heroTitle: "Your gateway to commercial locations in the Baltics.",
+      heroTitle: "Your gateway to commercial opportunities in the Baltics.",
       heroBody:
-        "Rankly helps businesses find, secure and operate commercial locations for market entry, automated retail, advertising and infrastructure.",
+        "Rankly helps businesses identify, secure, and operate commercial spaces for market entry, automated retail, advertising, and infrastructure.",
       geography: "ESTONIA · LATVIA · LITHUANIA",
       primaryCta: "Discuss your expansion",
       secondaryCta: "Submit a location",
@@ -76,23 +76,23 @@ const copy = {
       networkDisclosure:
         "Potential locations are identified for sourcing and evaluation. Availability is assessed case by case.",
       modelEyebrow: "THE RANKLY MODEL",
-      modelTitle: "Commercial space is only valuable when it becomes operational.",
+      modelTitle: "Commercial space becomes valuable only when it is operational.",
       modelBody:
-        "We connect location owners and expansion-focused businesses, then coordinate the commercial and operational steps required to move from an opportunity to a functioning site.",
+        "We connect property owners with expansion-focused businesses and coordinate the commercial and operational steps required to turn an opportunity into a functioning site.",
       whatWeDo: "WHAT WE DO",
       whatWeDoTitle: "From first location to daily operation.",
       operatorsEyebrow: "FOR OPERATORS & BRANDS",
-      operatorsTitle: "Launch in the Baltics without building the local process from zero.",
+      operatorsTitle: "Enter the Baltics without rebuilding the local process from scratch.",
       operatorsBody:
-        "Tell us what you want to deploy, where you want to operate and what the location must support. We help identify and coordinate potential sites.",
+        "Tell us what you want to deploy, where you want to operate, and what the site must support. We help identify and coordinate relevant opportunities.",
       propertyEyebrow: "FOR PROPERTY OWNERS",
-      propertyTitle: "Make underused commercial space productive.",
+      propertyTitle: "Turn underused commercial space into a productive opportunity.",
       propertyBody:
-        "Submit a location for potential vending, advertising, pop-up retail or infrastructure use. Suitability and commercial terms are evaluated individually.",
+        "Submit a site for potential vending, advertising, pop-up retail, or infrastructure use. Suitability and commercial terms are assessed individually.",
       networkEyebrow: "THE BALTIC NETWORK",
       networkTitle: "A sourcing network built for market entry.",
       networkBody:
-        "Our sourcing network covers multiple commercial environments across Estonia, Latvia and Lithuania. Location suitability, availability and commercial terms are evaluated case by case.",
+        "Our sourcing network covers diverse commercial environments across Estonia, Latvia, and Lithuania. Site suitability, availability, and commercial terms are assessed case by case.",
     },
     form: {
       name: "Name",
@@ -122,7 +122,7 @@ const copy = {
         eyebrow: "FOR OPERATORS",
         title: "Expand your commercial footprint across the Baltics.",
         intro:
-          "Rankly helps operators identify potential locations, coordinate commercial discussions and support local implementation.",
+          "Rankly helps operators identify relevant locations, coordinate commercial discussions, and support local implementation.",
         who: "WHO THIS IS FOR",
         whoTitle: "Built for operators and format-led expansion.",
         info: "INFORMATION NEEDED",
@@ -138,7 +138,7 @@ const copy = {
         eyebrow: "FOR PROPERTY OWNERS",
         title: "Turn underused commercial space into a structured opportunity.",
         intro:
-          "Submit a potential location for evaluation by operators seeking commercial space across the Baltics.",
+          "Submit a potential site for evaluation by operators seeking commercial space across the Baltics.",
         suitable: "SUITABLE ENVIRONMENTS",
         suitableTitle: "Spaces with practical potential.",
         useful: "WHAT MAKES A LOCATION USEFUL",
@@ -173,7 +173,7 @@ const copy = {
         eyebrow: "PRIVACY",
         title: "Privacy policy.",
         intro:
-          "We process contact and site information for commercial evaluation and coordination. This page is the placeholder version of the final policy and should be replaced before launch.",
+          "We process contact and site information for commercial evaluation and coordination. This placeholder policy outlines the intended use of data and should be replaced with the final legal version before launch.",
       },
     },
   },
@@ -340,7 +340,8 @@ const copy = {
       whatWeDo: "WAS WIR TUN",
       whatWeDoTitle: "Von der ersten Fläche bis zum täglichen Betrieb.",
       operatorsEyebrow: "FÜR OPERATOREN & MARKEN",
-      operatorsTitle: "Starten Sie im Baltikum, ohne den lokalen Prozess von Grund auf neu aufzubauen.",
+      operatorsTitle:
+        "Starten Sie im Baltikum, ohne den lokalen Prozess von Grund auf neu aufzubauen.",
       operatorsBody:
         "Erzählen Sie uns, was Sie einsetzen möchten, wo Sie tätig werden und welche Anforderungen der Standort erfüllen muss. Wir helfen bei der Identifizierung und Koordination potenzieller Standorte.",
       propertyEyebrow: "FÜR EIGENTÜMER",
@@ -477,13 +478,12 @@ function getRouteFromPath(pathname: string): { locale: Locale; page: PageKey } {
     return { locale, page: "/" };
   }
 
-  const detected = getLocaleFromBrowser();
-  if (normalized === "/operators") return { locale: detected, page: "/operators" };
-  if (normalized === "/property-owners") return { locale: detected, page: "/property-owners" };
-  if (normalized === "/how-it-works") return { locale: detected, page: "/how-it-works" };
-  if (normalized === "/contact") return { locale: detected, page: "/contact" };
-  if (normalized === "/privacy") return { locale: detected, page: "/privacy" };
-  return { locale: detected, page: "/" };
+  if (normalized === "/operators") return { locale: defaultLocale, page: "/operators" };
+  if (normalized === "/property-owners") return { locale: defaultLocale, page: "/property-owners" };
+  if (normalized === "/how-it-works") return { locale: defaultLocale, page: "/how-it-works" };
+  if (normalized === "/contact") return { locale: defaultLocale, page: "/contact" };
+  if (normalized === "/privacy") return { locale: defaultLocale, page: "/privacy" };
+  return { locale: defaultLocale, page: "/" };
 }
 
 function getInitialPath(): { locale: Locale; page: PageKey } {
