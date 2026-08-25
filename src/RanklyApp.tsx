@@ -25,13 +25,6 @@ type FooterLink = {
   href: string;
 };
 
-type ServiceItem = {
-  index: string;
-  title: string;
-  description: string;
-  icon: ReactNode;
-};
-
 type ProcessStep = {
   number: string;
   title: string;
@@ -41,20 +34,24 @@ type ProcessStep = {
 const supportedLocales = ["en", "lv", "de"] as const;
 const defaultLocale: Locale = "en";
 
+const proofMetrics = {
+  balticPopulation: {
+    value: "~6.1M",
+    verified: false,
+    source: "Official statistical sources",
+    referenceDate: "2026-01-01",
+  },
+  placementOpportunities: {
+    value: "2,000+",
+    verified: false,
+  },
+} as const;
+
 const localeLabels: Record<Locale, string> = {
   en: "EN",
   lv: "LV",
   de: "DE",
 };
-
-const locationTypeKeys = [
-  "shoppingCentres",
-  "airports",
-  "stations",
-  "officeBuildings",
-  "sportsClubs",
-  "fuelStations",
-] as const;
 
 const copy = {
   en: {
@@ -79,33 +76,24 @@ const copy = {
       geography: "ESTONIA · LATVIA · LITHUANIA",
       primaryCta: "Discuss your expansion",
       secondaryCta: "Submit a location",
-      networkLabel: "POTENTIAL LOCATION TYPES",
+      networkLabel: "BALTIC COMMERCIAL OPPORTUNITIES",
       networkDisclosure:
-        "Potential commercial environments are identified for sourcing and evaluation. Availability is assessed case by case.",
-      locationTypes: {
-        eyebrow: "POTENTIAL LOCATION TYPES",
-        description:
-          "Potential commercial environments for automated retail, advertising, pop-up concepts and infrastructure.",
-        qualification:
-          "Each opportunity is evaluated case by case. Availability is not guaranteed.",
-        counterLabel: "Location type",
-        prevLabel: "Previous location type",
-        nextLabel: "Next location type",
-        slides: {
-          shoppingCentres: { title: "Shopping centres" },
-          airports: { title: "Airports" },
-          stations: { title: "Railway and bus stations" },
-          officeBuildings: { title: "Office buildings" },
-          sportsClubs: { title: "Sports clubs" },
-          fuelStations: { title: "Fuel stations and logistics centres" },
-        },
-      },
+        "Illustrative regional coverage. Specific opportunities are evaluated case by case.",
+      populationLabel: "BALTIC POPULATION",
+      potentialLocationsLabel: "POTENTIAL LOCATIONS",
+      opportunityTitle: "Enter the Baltic market through the right commercial locations.",
+      opportunityBody:
+        "We help operators identify potential sites and coordinate the path from first opportunity to local launch.",
+      regionalAccess: "REGIONAL ACCESS",
+      mapCaption: "Illustrative regional coverage",
+      potentialOpportunities: "POTENTIAL OPPORTUNITIES",
+      offerLine: "LOCATION SOURCING  ·  LEASE COORDINATION  ·  LOCAL OPERATIONS",
+      qualificationNote:
+        "Potential opportunities are identified for sourcing and evaluation. Final availability depends on the location and commercial agreement.",
       modelEyebrow: "THE RANKLY MODEL",
       modelTitle: "Commercial space becomes valuable only when it is operational.",
       modelBody:
         "We connect property owners with expansion-focused businesses and coordinate the commercial and operational steps required to turn an opportunity into a functioning site.",
-      whatWeDo: "WHAT WE DO",
-      whatWeDoTitle: "From first location to daily operation.",
       operatorsEyebrow: "FOR OPERATORS & BRANDS",
       operatorsTitle: "Enter the Baltics without rebuilding the local process from scratch.",
       operatorsBody:
@@ -114,10 +102,6 @@ const copy = {
       propertyTitle: "Turn underused commercial space into a productive opportunity.",
       propertyBody:
         "Submit a site for potential vending, advertising, pop-up retail, or infrastructure use. Suitability and commercial terms are assessed individually.",
-      networkEyebrow: "THE BALTIC NETWORK",
-      networkTitle: "A sourcing network built for market entry.",
-      networkBody:
-        "Our sourcing network covers diverse commercial environments across Estonia, Latvia, and Lithuania. Site suitability, availability, and commercial terms are assessed case by case.",
     },
     form: {
       name: "Name",
@@ -224,32 +208,24 @@ const copy = {
       geography: "IGAUNIJA · LATVIJA · LIETUVA",
       primaryCta: "Pārrunāt paplašināšanos",
       secondaryCta: "Pieteikt lokāciju",
-      networkLabel: "POTENCIĀLIE LOKĀCIJU VEIDI",
+      networkLabel: "BALTIJAS KOMERCIĀLĀS IESPĒJAS",
       networkDisclosure:
-        "Potenciālās komerciālās vides tiek identificētas atlasei un izvērtēšanai. Pieejamība netiek garantēta.",
-      locationTypes: {
-        eyebrow: "POTENCIĀLIE LOKĀCIJU VEIDI",
-        description:
-          "Potenciālas komerciālās vides automatizētai mazumtirdzniecībai, reklāmai, pop-up konceptiem un infrastruktūrai.",
-        qualification: "Katra iespēja tiek izvērtēta atsevišķi. Pieejamība netiek garantēta.",
-        counterLabel: "Lokācijas veids",
-        prevLabel: "Iepriekšējais lokācijas veids",
-        nextLabel: "Nākamais lokācijas veids",
-        slides: {
-          shoppingCentres: { title: "Tirdzniecības centri" },
-          airports: { title: "Lidostas" },
-          stations: { title: "Dzelzceļa stacijas un autoostas" },
-          officeBuildings: { title: "Biroju ēkas" },
-          sportsClubs: { title: "Sporta klubi" },
-          fuelStations: { title: "Degvielas uzpildes stacijas un loģistikas centri" },
-        },
-      },
+        "Ilustratīvs reģiona pārklājums. Konkrētas iespējas tiek izvērtētas katrā gadījumā atsevišķi.",
+      populationLabel: "BALTIJAS IEDZĪVOTĀJI",
+      potentialLocationsLabel: "POTENCIĀLĀS LOKĀCIJAS",
+      opportunityTitle: "Ienāc Baltijas tirgū caur īstajām komerciālajām lokācijām.",
+      opportunityBody:
+        "Mēs palīdzam operatoriem identificēt potenciālās vietas un koordinējam procesu no pirmās iespējas līdz darbības uzsākšanai.",
+      regionalAccess: "REĢIONĀLĀ PIEEJAMĪBA",
+      mapCaption: "Ilustratīvs reģiona pārklājums",
+      potentialOpportunities: "POTENCIĀLĀS IESPĒJAS",
+      offerLine: "LOKĀCIJU ATLASE  ·  NOMAS KOORDINĒŠANA  ·  VIETĒJĀ DARBĪBA",
+      qualificationNote:
+        "Potenciālās iespējas tiek identificētas atlasei un izvērtēšanai. Galīgā pieejamība ir atkarīga no lokācijas un komerciālās vienošanās.",
       modelEyebrow: "RANKLY MODELIS",
       modelTitle: "Komerctelpa kļūst vērtīga tikai tad, kad tā darbojas.",
       modelBody:
         "Mēs savienojam īpašniekus ar uzņēmumiem, kuri plāno paplašināties, un koordinējam komerc- un operacionālos soļus no iespējas līdz funkcionējošai vietai.",
-      whatWeDo: "KO MĒS DARĀM",
-      whatWeDoTitle: "No pirmās lokācijas līdz ikdienas darbībai.",
       operatorsEyebrow: "OPERATORIEM UN ZĪMOLIEM",
       operatorsTitle: "Ienesiet savu konceptu Baltijā, neizveidojot vietējo procesu no nulles.",
       operatorsBody:
@@ -258,10 +234,6 @@ const copy = {
       propertyTitle: "Padariet neizmantoto komercvietu produktīvu.",
       propertyBody:
         "Piesniedziet vietu potenciālai tirdzniecībai, reklāmai, pagaidu veikalam vai infrastruktūras izmantošanai. Piemērotība un komerciālie nosacījumi tiek vērtēti individuāli.",
-      networkEyebrow: "BALTIJAS TĪKLS",
-      networkTitle: "Vietu atlases tīkls tirgus ienākšanai.",
-      networkBody:
-        "Mūsu vietu atlasē tiek aptvertas dažādas komercvides Igaunijā, Latvijā un Lietuvā. Vietas piemērotība, pieejamība un komerciālie nosacījumi tiek vērtēti individuāli.",
     },
     form: {
       name: "Vārds",
@@ -368,33 +340,25 @@ const copy = {
       geography: "ESTLAND · LETTLAND · LITAUEN",
       primaryCta: "Expansion besprechen",
       secondaryCta: "Standort einreichen",
-      networkLabel: "POTENZIELLE STANDORTTYPEN",
+      networkLabel: "GEWERBLICHE CHANCEN IM BALTIKUM",
       networkDisclosure:
-        "Potenzielle gewerbliche Umgebungen werden zur Suche und Bewertung identifiziert. Die Verfügbarkeit ist nicht garantiert.",
-      locationTypes: {
-        eyebrow: "POTENZIELLE STANDORTTYPEN",
-        description:
-          "Potenzielle gewerbliche Umgebungen für automatisierten Einzelhandel, Werbung, Pop-up-Konzepte und Infrastruktur.",
-        qualification:
-          "Jede Möglichkeit wird im Einzelfall geprüft. Die Verfügbarkeit ist nicht garantiert.",
-        counterLabel: "Standorttyp",
-        prevLabel: "Vorheriger Standorttyp",
-        nextLabel: "Nächster Standorttyp",
-        slides: {
-          shoppingCentres: { title: "Einkaufszentren" },
-          airports: { title: "Flughäfen" },
-          stations: { title: "Bahnhöfe und Busbahnhöfe" },
-          officeBuildings: { title: "Bürogebäude" },
-          sportsClubs: { title: "Sportvereine und Fitnessclubs" },
-          fuelStations: { title: "Tankstellen und Logistikzentren" },
-        },
-      },
+        "Illustrative regionale Abdeckung. Konkrete Möglichkeiten werden im Einzelfall geprüft.",
+      populationLabel: "BEVÖLKERUNG DES BALTIKUMS",
+      potentialLocationsLabel: "POTENZIELLE STANDORTE",
+      opportunityTitle:
+        "Erschließen Sie den baltischen Markt über die richtigen gewerblichen Standorte.",
+      opportunityBody:
+        "Wir unterstützen Betreiber dabei, potenzielle Standorte zu identifizieren und den Weg von der ersten Chance bis zum lokalen Start zu koordinieren.",
+      regionalAccess: "REGIONALER ZUGANG",
+      mapCaption: "Illustrative regionale Abdeckung",
+      potentialOpportunities: "POTENZIELLE MÖGLICHKEITEN",
+      offerLine: "STANDORTSUCHE  ·  MIETKOORDINATION  ·  LOKALER BETRIEB",
+      qualificationNote:
+        "Potenzielle Möglichkeiten werden zur Suche und Bewertung identifiziert. Die endgültige Verfügbarkeit hängt vom Standort und der kommerziellen Vereinbarung ab.",
       modelEyebrow: "DAS RANKLY-MODELL",
       modelTitle: "Gewerbeflächen werden erst wertvoll, wenn sie genutzt werden.",
       modelBody:
         "Wir verbinden Eigentümer mit Unternehmen, die expandieren möchten, und koordinieren die kommerziellen und operativen Schritte von der ersten Chance bis zur funktionsfähigen Fläche.",
-      whatWeDo: "WAS WIR TUN",
-      whatWeDoTitle: "Von der ersten Fläche bis zum täglichen Betrieb.",
       operatorsEyebrow: "FÜR OPERATOREN & MARKEN",
       operatorsTitle:
         "Starten Sie im Baltikum, ohne den lokalen Prozess von Grund auf neu aufzubauen.",
@@ -404,10 +368,6 @@ const copy = {
       propertyTitle: "Machen Sie ungenutzte Gewerbeflächen produktiv.",
       propertyBody:
         "Reichen Sie einen Standort für potenzielle Vending-, Werbe-, Pop-up- oder Infrastrukturnutzung ein. Eignung und kommerzielle Bedingungen werden individuell bewertet.",
-      networkEyebrow: "DAS BALTISCHE NETZWERK",
-      networkTitle: "Ein Standortnetzwerk für den Markteintritt.",
-      networkBody:
-        "Unser Standortnetzwerk deckt verschiedene gewerbliche Umgebungen in Estland, Lettland und Litauen ab. Eignung, Verfügbarkeit und kommerzielle Bedingungen werden im Einzelfall geprüft.",
     },
     form: {
       name: "Name",
@@ -547,37 +507,6 @@ function getInitialPath(): { locale: Locale; page: PageKey } {
   return getRouteFromPath(window.location.pathname);
 }
 
-const serviceItems: ServiceItem[] = [
-  {
-    index: "01",
-    title: "Location Sourcing",
-    description:
-      "Identify potential locations based on geography, customer profile, format, access, visibility and operational requirements.",
-    icon: <MapPinned size={18} />,
-  },
-  {
-    index: "02",
-    title: "Market Entry",
-    description:
-      "Support businesses evaluating and entering the Baltic market with a local, location-focused partner.",
-    icon: <Globe2 size={18} />,
-  },
-  {
-    index: "03",
-    title: "Lease Negotiation",
-    description:
-      "Coordinate commercial discussions and help structure the relevant location agreement.",
-    icon: <ShieldCheck size={18} />,
-  },
-  {
-    index: "04",
-    title: "Local Operations",
-    description:
-      "Support installation, access, maintenance coordination, replacement and ongoing local requirements.",
-    icon: <Building2 size={18} />,
-  },
-];
-
 const whyGrid = [
   "Baltic market coverage",
   "Location-focused approach",
@@ -615,39 +544,6 @@ const processSteps: ProcessStep[] = [
   },
 ];
 
-const useCases = [
-  {
-    title: "Automated retail",
-    description:
-      "Potential locations for unattended retail formats, evaluated according to access, visibility, infrastructure and commercial fit.",
-  },
-  {
-    title: "Vending",
-    description:
-      "Potential locations for service or convenience formats where customer flow, visibility and operating conditions matter.",
-  },
-  {
-    title: "EV charging",
-    description:
-      "Potential infrastructure sites assessed for power availability, traffic profile and operational requirements.",
-  },
-  {
-    title: "Advertising",
-    description:
-      "Potential placements in high-traffic spaces evaluated for customer reach, visibility and environmental fit.",
-  },
-  {
-    title: "Pop-up retail",
-    description:
-      "Short-term or flexible commercial concepts assessed in relevant public and retail environments.",
-  },
-  {
-    title: "Commercial services",
-    description:
-      "Potential locations for service-led operations that need practical access, customer footfall and local coordination.",
-  },
-];
-
 const footerLinks: FooterLink[] = [
   { label: "Home", href: "/" },
   { label: "For Operators", href: "/operators" },
@@ -659,21 +555,13 @@ const footerLinks: FooterLink[] = [
 
 function BrandMark({ small = false }: { small?: boolean }) {
   return (
-    <div className={`brand-mark ${small ? "small" : ""}`} aria-hidden="true">
-      <svg viewBox="0 0 64 64" role="img" aria-label="Rankly brand mark">
-        <rect x="3" y="3" width="58" height="58" rx="14" />
+    <div className={`brand-mark ${small ? "small" : ""}`} role="img" aria-label="RANKLY logo">
+      <svg viewBox="0 0 40 40" aria-hidden="true">
         <path
-          d="M18 18h15.5c7.2 0 12 4.4 12 11.3 0 6.2-4.2 10.2-9.9 11.2L42 46H31.3l-5.9-9.1H23V46H18V18Zm10.2 14.8h4.5c3.7 0 6-1.8 6-4.9 0-3.2-2.2-4.8-6.2-4.8h-4.3v9.7Z"
+          d="M9 32V8h10.5C26.3 8 30 11.2 30 16.5c0 3.8-2 6.4-5.4 7.7L32 32h-7l-6.2-7.2H15V32H9Zm6-12.5h4c3.2 0 5-1 5-3s-1.8-3-5-3h-4v6Z"
           fill="currentColor"
         />
-        <circle cx="47" cy="18" r="3.2" fill="#B7F000" />
-        <path
-          d="M39 19c3.9-.8 6.6-2.7 8.5-5.7"
-          stroke="#B7F000"
-          strokeWidth="2"
-          strokeLinecap="round"
-          fill="none"
-        />
+        <path d="M20 23.5 31 32" stroke="currentColor" strokeWidth="6" strokeLinecap="square" />
       </svg>
     </div>
   );
@@ -802,234 +690,54 @@ function RevealOnScroll({ children, delay = 0 }: { children: ReactNode; delay?: 
   );
 }
 
-function MetricStrip({ locale }: { locale: Locale }) {
-  const metrics =
-    locale === "lv"
-      ? [
-          { value: "3", label: "Baltijas tirgi" },
-          { value: "4", label: "Pamatehnoloģijas" },
-          { value: "", label: "Lokāciju atlase" },
-          { value: "", label: "Lokālā koordinācija" },
-        ]
-      : locale === "de"
-        ? [
-            { value: "3", label: "Baltische Märkte" },
-            { value: "4", label: "Kernleistungen" },
-            { value: "", label: "Standortsuche" },
-            { value: "", label: "Lokale Koordination" },
-          ]
-        : [
-            { value: "3", label: "Baltic markets" },
-            { value: "4", label: "Core services" },
-            { value: "", label: "Location sourcing" },
-            { value: "", label: "Local coordination" },
-          ];
-
+function OpportunityCard({
+  locale,
+  onNavigate,
+}: {
+  locale: Locale;
+  onNavigate: (path: PageKey, locale?: Locale) => void;
+}) {
   return (
-    <div className="metric-strip">
-      {metrics.map((item) => (
-        <div key={item.label} className="metric-item">
-          <div className="metric-value">{item.value || "—"}</div>
-          <div className="metric-label">{item.label}</div>
+    <div className="opportunity-card">
+      <div className="network-card-header">
+        <div>
+          <div className="network-kicker">{copy[locale].home.mapCaption}</div>
+          <div className="network-legend">{copy[locale].home.networkLabel}</div>
         </div>
-      ))}
-    </div>
-  );
-}
-
-function LocationTypeCarousel({ locale }: { locale: Locale }) {
-  const slides = useMemo(
-    () =>
-      locationTypeKeys.map((key) => ({
-        id: key,
-        title: copy[locale].home.locationTypes.slides[key].title,
-      })),
-    [locale],
-  );
-  const [activeIndex, setActiveIndex] = useState(0);
-  const currentSlide = slides[activeIndex];
-  const currentNumber = String(activeIndex + 1).padStart(2, "0");
-  const totalNumber = String(slides.length).padStart(2, "0");
-
-  const onSelect = (direction: 1 | -1) => {
-    setActiveIndex((previous) => (previous + direction + slides.length) % slides.length);
-  };
-
-  const onKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
-    if (event.key === "ArrowRight") {
-      event.preventDefault();
-      onSelect(1);
-    }
-    if (event.key === "ArrowLeft") {
-      event.preventDefault();
-      onSelect(-1);
-    }
-  };
-
-  return (
-    <div
-      className="location-type-carousel"
-      aria-roledescription="carousel"
-      aria-label={copy[locale].home.locationTypes.eyebrow}
-      tabIndex={0}
-      onKeyDown={onKeyDown}
-    >
-      <div className="location-type-header">
-        <span className="location-type-counter">
-          {copy[locale].home.locationTypes.counterLabel} {currentNumber} / {totalNumber}
-        </span>
-        <div className="location-type-nav" aria-label={copy[locale].home.locationTypes.eyebrow}>
-          <button
-            type="button"
-            className="carousel-control"
-            onClick={() => onSelect(-1)}
-            aria-label={copy[locale].home.locationTypes.prevLabel}
-          >
-            ‹
-          </button>
-          <button
-            type="button"
-            className="carousel-control"
-            onClick={() => onSelect(1)}
-            aria-label={copy[locale].home.locationTypes.nextLabel}
-          >
-            ›
-          </button>
+        <div className="network-status">
+          <span className="network-status-dot" />
+          <span>{copy[locale].home.regionalAccess}</span>
         </div>
       </div>
-
-      <div className="location-type-content" aria-live="polite">
-        <div className="location-type-badge">{copy[locale].home.locationTypes.eyebrow}</div>
-        <h3>{currentSlide.title}</h3>
-        <p>{copy[locale].home.locationTypes.description}</p>
-        <div className="location-type-qualification">
-          {copy[locale].home.locationTypes.qualification}
+      <div className="network-opportunity">
+        <h3>{copy[locale].home.opportunityTitle}</h3>
+        <p>{copy[locale].home.opportunityBody}</p>
+      </div>
+      <div className="network-stats">
+        {proofMetrics.balticPopulation.verified && (
+          <div>
+            <strong>{proofMetrics.balticPopulation.value}</strong>
+            <span>{copy[locale].home.populationLabel}</span>
+          </div>
+        )}
+        <div>
+          <strong>
+            {proofMetrics.placementOpportunities.verified
+              ? proofMetrics.placementOpportunities.value
+              : "—"}
+          </strong>
+          <span>
+            {proofMetrics.placementOpportunities.verified
+              ? copy[locale].home.potentialLocationsLabel
+              : copy[locale].home.potentialOpportunities}
+          </span>
         </div>
       </div>
-
-      <div className="location-type-dots" aria-label="Slide navigation">
-        {slides.map((slide, index) => (
-          <button
-            key={slide.id}
-            type="button"
-            className={index === activeIndex ? "dot active" : "dot"}
-            onClick={() => setActiveIndex(index)}
-            aria-label={`${copy[locale].home.locationTypes.eyebrow}: ${slide.title}`}
-            aria-current={index === activeIndex ? "true" : undefined}
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function NetworkVisual({ locale }: { locale: Locale }) {
-  return (
-    <div className="network-visual-wrap">
-      <div className="network-legend">{copy[locale].home.locationTypes.eyebrow}</div>
-      <svg
-        className="network-visual"
-        viewBox="0 0 820 420"
-        aria-label="Baltic sourcing network visualisation"
-      >
-        <defs>
-          <linearGradient id="lineFade" x1="0" x2="1">
-            <stop offset="0%" stopColor="#B7F000" stopOpacity="0.12" />
-            <stop offset="50%" stopColor="#B7F000" stopOpacity="0.85" />
-            <stop offset="100%" stopColor="#B7F000" stopOpacity="0.12" />
-          </linearGradient>
-        </defs>
-        <g opacity="0.26">
-          <path
-            d="M128 120C215 70 243 127 324 148S457 144 547 90 690 87 746 158"
-            stroke="#DCE2E8"
-            strokeWidth="1.1"
-            fill="none"
-          />
-          <path
-            d="M111 202C172 181 208 224 277 241S399 262 470 219 639 224 720 260"
-            stroke="#DCE2E8"
-            strokeWidth="1.1"
-            fill="none"
-          />
-          <path
-            d="M180 291C240 238 289 273 353 279S473 305 560 282 678 246 733 302"
-            stroke="#DCE2E8"
-            strokeWidth="1.1"
-            fill="none"
-          />
-        </g>
-        <g>
-          <path
-            d="M202 309L239 246L285 234L372 144L456 169L517 104L600 178L667 242"
-            stroke="url(#lineFade)"
-            strokeWidth="2.5"
-            fill="none"
-            strokeLinecap="round"
-          />
-          <path
-            d="M188 178L246 140L318 213L380 126L411 177L520 224L613 211L666 181"
-            stroke="#DCE2E8"
-            strokeWidth="1.2"
-            fill="none"
-            opacity="0.78"
-          />
-        </g>
-        <g>
-          <circle className="pulse pulse-1" cx="202" cy="309" r="8" fill="#B7F000" />
-          <circle className="pulse pulse-2" cx="285" cy="234" r="7" fill="#DCE2E8" />
-          <circle className="pulse pulse-3" cx="372" cy="144" r="8" fill="#F5F7F8" />
-          <circle className="pulse pulse-4" cx="456" cy="169" r="6" fill="#B7F000" />
-          <circle className="pulse pulse-5" cx="600" cy="178" r="7" fill="#DCE2E8" />
-          <circle className="pulse pulse-6" cx="667" cy="242" r="8" fill="#B7F000" />
-          <circle className="pulse pulse-7" cx="515" cy="104" r="7" fill="#F5F7F8" />
-        </g>
-        <g className="network-labels" fill="#EAF1F4">
-          <text x="150" y="84">
-            TALLINN
-          </text>
-          <text x="420" y="78">
-            RIGA
-          </text>
-          <text x="615" y="110">
-            VILNIUS
-          </text>
-        </g>
-        <g fill="#8C99A8">
-          <text x="210" y="336">
-            ESTONIA
-          </text>
-          <text x="440" y="335">
-            LATVIA
-          </text>
-          <text x="610" y="336">
-            LITHUANIA
-          </text>
-        </g>
-        <g fill="#B7F000" fontSize="12" fontWeight="700">
-          <text x="350" y="196">
-            SOURCE
-          </text>
-        </g>
-      </svg>
-      <LocationTypeCarousel locale={locale} />
-    </div>
-  );
-}
-
-function ServiceCard({ item }: { item: ServiceItem }) {
-  return (
-    <div className="service-card">
-      <div className="service-topline">
-        <span className="service-index">{item.index}</span>
-        <span className="service-icon">{item.icon}</span>
-      </div>
-      <h3>{item.title}</h3>
-      <p>{item.description}</p>
-      <div className="service-link">
-        <span>Explore</span>
-        <ArrowUpRight size={16} />
-      </div>
+      <div className="network-offer-line">{copy[locale].home.offerLine}</div>
+      <button type="button" className="network-cta" onClick={() => onNavigate("/contact", locale)}>
+        {copy[locale].home.primaryCta} <ArrowRight size={15} />
+      </button>
+      <div className="network-disclosure">{copy[locale].home.qualificationNote}</div>
     </div>
   );
 }
@@ -1063,18 +771,6 @@ function AudiencePanel({
         ))}
       </div>
       <PrimaryButton href={href}>{cta}</PrimaryButton>
-    </div>
-  );
-}
-
-function UseCaseCard({ title, description }: { title: string; description: string }) {
-  return (
-    <div className="use-case-card">
-      <div className="use-case-graphic" aria-hidden="true">
-        <span />
-      </div>
-      <h3>{title}</h3>
-      <p>{description}</p>
     </div>
   );
 }
@@ -1587,14 +1283,10 @@ function HomePage({
           </div>
 
           <div className="hero-visual-wrap">
-            <NetworkVisual locale={locale} />
+            <OpportunityCard locale={locale} onNavigate={onNavigate} />
           </div>
         </div>
       </section>
-
-      <div className="rankly-container">
-        <MetricStrip locale={locale} />
-      </div>
 
       <section className="section-light">
         <div className="rankly-container intro-block">
@@ -1616,26 +1308,6 @@ function HomePage({
               <span>OPERATIONS</span>
             </div>
           </RevealOnScroll>
-        </div>
-      </section>
-
-      <section className="section-dark">
-        <div className="rankly-container">
-          <RevealOnScroll>
-            <SectionHeader
-              eyebrow={copy[locale].home.whatWeDo}
-              title={copy[locale].home.whatWeDoTitle}
-              intro=""
-              align="left"
-            />
-          </RevealOnScroll>
-          <div className="service-grid">
-            {serviceItems.map((item, index) => (
-              <RevealOnScroll key={item.title} delay={index * 0.06}>
-                <ServiceCard item={item} />
-              </RevealOnScroll>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -1675,67 +1347,6 @@ function HomePage({
               href={withLocale("/property-owners", locale)}
             />
           </RevealOnScroll>
-        </div>
-      </section>
-
-      <section className="section-dark network-section">
-        <div className="rankly-container">
-          <RevealOnScroll>
-            <SectionHeader
-              eyebrow={copy[locale].home.networkEyebrow}
-              title={copy[locale].home.networkTitle}
-              intro={copy[locale].home.networkBody}
-            />
-          </RevealOnScroll>
-          <RevealOnScroll delay={0.08}>
-            <div className="filter-bar" aria-label="Location types filter controls">
-              <span className="active">ALL LOCATIONS</span>
-              <span>RETAIL</span>
-              <span>TRANSPORT</span>
-              <span>OFFICE</span>
-              <span>SPORTS</span>
-              <span>LOGISTICS</span>
-            </div>
-          </RevealOnScroll>
-          <RevealOnScroll delay={0.12}>
-            <div className="network-map-box">
-              <div className="network-map-grid" aria-hidden="true">
-                <span className="map-label map-estonia">ESTONIA</span>
-                <span className="map-label map-latvia">LATVIA</span>
-                <span className="map-label map-lithuania">LITHUANIA</span>
-                <span className="map-node node-a" />
-                <span className="map-node node-b" />
-                <span className="map-node node-c" />
-                <span className="map-node node-d" />
-                <span className="map-node node-e" />
-              </div>
-            </div>
-          </RevealOnScroll>
-        </div>
-      </section>
-
-      <section className="section-light">
-        <div className="rankly-container">
-          <RevealOnScroll>
-            <SectionHeader
-              eyebrow=""
-              title={
-                locale === "lv"
-                  ? "Dažādi formāti. Viena lokāciju partnere."
-                  : locale === "de"
-                    ? "Verschiedene Formate. Ein Standortpartner."
-                    : "Different formats. One location partner."
-              }
-              align="center"
-            />
-          </RevealOnScroll>
-          <div className="use-case-grid">
-            {useCases.map((item, index) => (
-              <RevealOnScroll key={item.title} delay={index * 0.04}>
-                <UseCaseCard title={item.title} description={item.description} />
-              </RevealOnScroll>
-            ))}
-          </div>
         </div>
       </section>
 
