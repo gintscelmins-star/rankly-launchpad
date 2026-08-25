@@ -43,21 +43,84 @@ type OpportunityStat = {
 const opportunityStats: Record<Locale, OpportunityStat[]> = {
   en: [
     { id: "airports", label: "INTERNATIONAL AIRPORTS", value: null, verified: false },
-    { id: "shopping", label: "LARGE SHOPPING CENTRES", value: null, verified: false },
-    { id: "gyms", label: "GYMS / SPORTS CLUBS", value: null, verified: false },
-    { id: "business", label: "BUSINESS CENTRES", value: null, verified: false },
+    {
+      id: "shopping",
+      label: "LARGE SHOPPING CENTRES",
+      value: "~50",
+      verified: true,
+      source: "User-provided indicative estimate",
+      referenceDate: "2026-08-25",
+    },
+    {
+      id: "gyms",
+      label: "GYMS / SPORTS CLUBS",
+      value: "~1,000",
+      verified: true,
+      source: "User-provided indicative estimate",
+      referenceDate: "2026-08-25",
+    },
+    {
+      id: "business",
+      label: "BUSINESS CENTRES",
+      value: "~330",
+      verified: true,
+      source: "User-provided indicative estimate",
+      referenceDate: "2026-08-25",
+    },
   ],
   lv: [
     { id: "airports", label: "STARPTAUTISKĀS LIDOSTAS", value: null, verified: false },
-    { id: "shopping", label: "LIELIE TIRDZNIECĪBAS CENTRI", value: null, verified: false },
-    { id: "gyms", label: "SPORTA ZĀLES / KLUBI", value: null, verified: false },
-    { id: "business", label: "BIZNESA CENTRI", value: null, verified: false },
+    {
+      id: "shopping",
+      label: "LIELIE TIRDZNIECĪBAS CENTRI",
+      value: "~50",
+      verified: true,
+      source: "Lietotāja sniegts orientējošs aprēķins",
+      referenceDate: "2026-08-25",
+    },
+    {
+      id: "gyms",
+      label: "SPORTA ZĀLES / KLUBI",
+      value: "~1 000",
+      verified: true,
+      source: "Lietotāja sniegts orientējošs aprēķins",
+      referenceDate: "2026-08-25",
+    },
+    {
+      id: "business",
+      label: "BIZNESA CENTRI",
+      value: "~330",
+      verified: true,
+      source: "Lietotāja sniegts orientējošs aprēķins",
+      referenceDate: "2026-08-25",
+    },
   ],
   de: [
     { id: "airports", label: "INTERNATIONALE FLUGHÄFEN", value: null, verified: false },
-    { id: "shopping", label: "GROSSE EINKAUFSZENTREN", value: null, verified: false },
-    { id: "gyms", label: "FITNESSSTUDIOS / SPORTVEREINE", value: null, verified: false },
-    { id: "business", label: "BÜRO- UND GESCHÄFTSZENTREN", value: null, verified: false },
+    {
+      id: "shopping",
+      label: "GROSSE EINKAUFSZENTREN",
+      value: "~50",
+      verified: true,
+      source: "Vom Nutzer bereitgestellte indikative Schätzung",
+      referenceDate: "2026-08-25",
+    },
+    {
+      id: "gyms",
+      label: "FITNESSSTUDIOS / SPORTVEREINE",
+      value: "~1.000",
+      verified: true,
+      source: "Vom Nutzer bereitgestellte indikative Schätzung",
+      referenceDate: "2026-08-25",
+    },
+    {
+      id: "business",
+      label: "BÜRO- UND GESCHÄFTSZENTREN",
+      value: "~330",
+      verified: true,
+      source: "Vom Nutzer bereitgestellte indikative Schätzung",
+      referenceDate: "2026-08-25",
+    },
   ],
 };
 
@@ -67,9 +130,9 @@ const defaultLocale: Locale = "en";
 const proofMetrics = {
   balticPopulation: {
     value: "~6.1M",
-    verified: false,
-    source: "Official statistical sources",
-    referenceDate: "2026-01-01",
+    verified: true,
+    source: "Eurostat demo_pjan, total population by country (EE/LV/LT)",
+    referenceDate: "2025-01-01",
   },
   placementOpportunities: {
     value: "2,000+",
@@ -100,9 +163,9 @@ const copy = {
     },
     home: {
       eyebrow: "SPECIALISED LEASING",
-      heroTitle: "Your gateway to commercial opportunities in the Baltics.",
+      heroTitle: "Your gateway to commercial locations in Europe and the Baltics.",
       heroBody:
-        "Rankly helps businesses identify, secure, and operate commercial spaces for market entry, automated retail, advertising, and infrastructure.",
+        "Rankly helps businesses find, secure and operate commercial locations for automated retail, vending, massage chairs, EV charging, advertising, pop-up retail and other commercial concepts.",
       geography: "ESTONIA · LATVIA · LITHUANIA",
       primaryCta: "Discuss your expansion",
       secondaryCta: "Submit a location",
@@ -124,16 +187,17 @@ const copy = {
       objectsQualification:
         "Figures are indicative categories for sourcing, not confirmed availability.",
       potentialSites: "Potential sites",
-      alertEyebrow: "ACTIVE PARTNER OPPORTUNITY",
-      alertTitle: "We are looking for unused commercial space in Europe.",
+      alertEyebrow: "CURRENT EUROPEAN SOURCING REQUEST",
+      alertTitle: "European locations wanted for massage chairs.",
       alertSubheadline: "Help bring self-service massage chairs to high-footfall locations.",
       alertBody:
-        "Rankly is currently sourcing potential locations in Europe for Baltic massage-chair operators. We are interested in shopping centres, airports, railway and bus stations, gyms, hotels, offices and other commercial environments where visitors naturally wait, rest or pass through.",
+        "We are currently helping Baltic massage-chair operators identify potential locations across Europe. At the same time, Rankly supports many other commercial concepts looking for suitable locations.",
       alertHeading: "Two sides of the same opportunity.",
-      ownerOffer: "Have unused space in Europe?",
+      ownerOffer: "Have underused commercial space in Europe or the Baltics?",
       ownerAction: "Submit a potential location",
-      operatorOffer: "Need European locations for massage chairs?",
+      operatorOffer: "Looking for locations for your next commercial concept?",
       operatorAction: "Discuss your expansion",
+      campaignOperatorLabel: "MASSAGE-CHAIR OPERATORS",
       ownerOfferDetail:
         "Provide unused space. We coordinate the initial opportunity review with the relevant operator.",
       operatorOfferDetail:
@@ -141,6 +205,17 @@ const copy = {
       alertNow: "NOW SOURCING EUROPEAN LOCATIONS",
       alertQualification:
         "This is an active sourcing request. Placement, commercial terms and final availability are evaluated case by case.",
+      positioning:
+        "Rankly helps businesses find, secure and operate commercial locations across Europe and the Baltics.",
+      positioningDetail:
+        "We work with operators across automated retail, vending, massage chairs, EV charging, advertising, pop-up retail and other commercial concepts.",
+      directionA: "Baltic operators → European locations",
+      directionB: "European opportunities → Commercial operators",
+      intent: "What are you looking for?",
+      generalConcept: "General commercial concept",
+      massageChairs: "Massage chairs",
+      propertyIntent: "Property owner / available space",
+      otherIntent: "Other",
       modelEyebrow: "THE RANKLY MODEL",
       modelTitle: "Commercial space becomes valuable only when it is operational.",
       modelBody:
@@ -153,9 +228,26 @@ const copy = {
       propertyTitle: "Turn underused commercial space into a productive opportunity.",
       propertyBody:
         "Submit a site for potential vending, advertising, pop-up retail, or infrastructure use. Suitability and commercial terms are assessed individually.",
+      broadOperatorEyebrow: "FOR OPERATORS AND COMMERCIAL CONCEPTS",
+      broadOperatorTitle: "Looking for locations for your next commercial concept?",
+      broadOperatorBody:
+        "Tell us what you operate, where you want to expand and what the location must support. Rankly helps structure the search, evaluate potential opportunities and coordinate local commercial discussions.",
+      broadPropertyTitle: "Have underused commercial space in Europe or the Baltics?",
+      broadPropertyBody:
+        "Rankly helps property owners evaluate potential uses for underused space and connect with suitable commercial operators.",
+      categories: [
+        "Automated retail",
+        "Vending",
+        "Massage chairs",
+        "EV charging",
+        "Advertising",
+        "Pop-up retail",
+        "Commercial services",
+      ],
     },
     form: {
       name: "Name",
+      intent: "What are you looking for?",
       email: "Email",
       message: "Message",
       sendInquiry: "Send inquiry",
@@ -184,6 +276,10 @@ const copy = {
       powerRequirements: "Power requirements",
       serviceModel: "Maintenance / service model",
       installationTimeline: "Installation timeline",
+      businessType: "Business or concept type",
+      requiredTypes: "Required location types",
+      technicalRequirements: "Technical requirements",
+      timeline: "Timeline",
     },
     footer: {
       navigation: "Navigation",
@@ -268,9 +364,9 @@ const copy = {
     },
     home: {
       eyebrow: "SPECIALIZĒTA NOMA",
-      heroTitle: "Jūsu vārti uz komerciālām iespējām Baltijā.",
+      heroTitle: "Tavs piekļuves punkts komerciālajām lokācijām Eiropā un Baltijā.",
       heroBody:
-        "Rankly palīdz uzņēmumiem atrast, nodrošināt un pārvaldīt komerciālas vietas tirgus ienākšanai, automatizētai mazumtirdzniecībai, reklāmai un infrastruktūrai.",
+        "Rankly palīdz uzņēmumiem atrast, nodrošināt un pārvaldīt komerciālās lokācijas automatizētai mazumtirdzniecībai, vending, masāžas krēsliem, EV uzlādei, reklāmai, pop-up tirdzniecībai un citiem komerciāliem konceptiem.",
       geography: "IGAUNIJA · LATVIJA · LIETUVA",
       primaryCta: "Pārrunāt paplašināšanos",
       secondaryCta: "Pieteikt lokāciju",
@@ -292,17 +388,18 @@ const copy = {
       objectsQualification:
         "Skaitļi ir orientējoši atlases kategoriju apjomi, nevis apstiprināta pieejamība.",
       potentialSites: "Potenciālie objekti",
-      alertEyebrow: "AKTUĀLA PARTNERĪBAS IESPĒJA",
-      alertTitle: "Meklējam neizmantotas komerciālās telpas Eiropā.",
+      alertEyebrow: "AKTUĀLS LOKĀCIJU ATLASES PIEPRASĪJUMS EIROPĀ",
+      alertTitle: "Eiropā meklējam lokācijas masāžas krēsliem.",
       alertSubheadline:
         "Palīdziet izvietot pašapkalpošanās masāžas krēslus vietās ar lielu cilvēku plūsmu.",
       alertBody:
-        "Rankly pašlaik meklē potenciālas lokācijas Eiropā Baltijas masāžas krēslu operatoriem. Mūs interesē tirdzniecības centri, lidostas, dzelzceļa stacijas un autoostas, sporta zāles, viesnīcas, biroji un citas komerciālās vides, kur apmeklētāji gaida, atpūšas vai pārvietojas.",
+        "Pašlaik palīdzam Baltijas masāžas krēslu operatoriem atrast potenciālas lokācijas Eiropā. Vienlaikus Rankly atbalsta arī citus komerciālos konceptus, kas meklē piemērotas lokācijas.",
       alertHeading: "Divas vienas iespējas puses.",
-      ownerOffer: "Vai jums ir neizmantota platība Eiropā?",
+      ownerOffer: "Vai jums Eiropā vai Baltijā ir nepietiekami izmantota komerctelpa?",
       ownerAction: "Piesakiet potenciālo lokāciju",
-      operatorOffer: "Vai meklējat lokācijas masāžas krēsliem Eiropā?",
+      operatorOffer: "Meklē lokācijas savam nākamajam komerciālajam konceptam?",
       operatorAction: "Pārrunājiet paplašināšanos",
+      campaignOperatorLabel: "MASĀŽAS KRĒSLU OPERATORI",
       ownerOfferDetail:
         "Piedāvājiet neizmantotu platību. Mēs koordinēsim sākotnējo iespējas izvērtēšanu ar attiecīgo operatoru.",
       operatorOfferDetail:
@@ -310,6 +407,17 @@ const copy = {
       alertNow: "PAŠLAIK MEKLĒJAM LOKĀCIJAS EIROPĀ",
       alertQualification:
         "Šis ir aktīvs lokāciju atlases pieprasījums. Izvietošana, komerciālie nosacījumi un galīgā pieejamība tiek izvērtēti katrā gadījumā atsevišķi.",
+      positioning:
+        "Rankly palīdz uzņēmumiem atrast, nodrošināt un pārvaldīt komerciālās lokācijas Eiropā un Baltijā.",
+      positioningDetail:
+        "Mēs strādājam ar automatizētās mazumtirdzniecības, vending, masāžas krēslu, EV uzlādes, reklāmas, pop-up tirdzniecības un citu komerciālo konceptu operatoriem.",
+      directionA: "Baltijas operatori → Eiropas lokācijas",
+      directionB: "Eiropas iespējas → Komerciālie operatori",
+      intent: "Ko jūs meklējat?",
+      generalConcept: "Vispārīgs komerciāls koncepts",
+      massageChairs: "Masāžas krēsli",
+      propertyIntent: "Īpašnieks / pieejama telpa",
+      otherIntent: "Cits",
       modelEyebrow: "RANKLY MODELIS",
       modelTitle: "Komerctelpa kļūst vērtīga tikai tad, kad tā darbojas.",
       modelBody:
@@ -322,9 +430,26 @@ const copy = {
       propertyTitle: "Padariet neizmantoto komercvietu produktīvu.",
       propertyBody:
         "Piesniedziet vietu potenciālai tirdzniecībai, reklāmai, pagaidu veikalam vai infrastruktūras izmantošanai. Piemērotība un komerciālie nosacījumi tiek vērtēti individuāli.",
+      broadOperatorEyebrow: "OPERATORIEM UN KOMERCIĀLIEM KONCEPTIEM",
+      broadOperatorTitle: "Meklē lokācijas savam nākamajam komerciālajam konceptam?",
+      broadOperatorBody:
+        "Pastāsti, ko tu pārvaldi, kur vēlies paplašināties un kādām prasībām lokācijai jāatbilst. Rankly palīdz strukturēt meklēšanu, izvērtēt potenciālās iespējas un koordinēt vietējās komerciālās pārrunas.",
+      broadPropertyTitle: "Vai jums Eiropā vai Baltijā ir nepietiekami izmantota komerctelpa?",
+      broadPropertyBody:
+        "Rankly palīdz īpašniekiem izvērtēt nepietiekami izmantotas telpas potenciālo izmantošanu un savienot tās ar piemērotiem komerciālajiem operatoriem.",
+      categories: [
+        "Automatizētā mazumtirdzniecība",
+        "Vending",
+        "Masāžas krēsli",
+        "EV uzlāde",
+        "Reklāma",
+        "Pop-up tirdzniecība",
+        "Komerciālie pakalpojumi",
+      ],
     },
     form: {
       name: "Vārds",
+      intent: "Ko jūs meklējat?",
       email: "E-pasts",
       message: "Ziņa",
       sendInquiry: "Nosūtīt pieprasījumu",
@@ -353,6 +478,10 @@ const copy = {
       powerRequirements: "Elektroenerģijas prasības",
       serviceModel: "Apkopes / servisa modelis",
       installationTimeline: "Uzstādīšanas termiņš",
+      businessType: "Biznesa vai koncepta veids",
+      requiredTypes: "Nepieciešamie objektu veidi",
+      technicalRequirements: "Tehniskās prasības",
+      timeline: "Termiņš",
     },
     footer: {
       navigation: "Navigācija",
@@ -437,9 +566,9 @@ const copy = {
     },
     home: {
       eyebrow: "SPEZIALISIERTE VERMIETUNG",
-      heroTitle: "Ihr Zugang zu gewerblichen Standorten im Baltikum.",
+      heroTitle: "Ihr Zugang zu gewerblichen Standorten in Europa und im Baltikum.",
       heroBody:
-        "Rankly unterstützt Unternehmen dabei, gewerbliche Standorte für den Markteintritt, den automatisierten Einzelhandel, Werbung und Infrastruktur zu finden, zu sichern und zu betreiben.",
+        "Rankly unterstützt Unternehmen dabei, gewerbliche Standorte für automatisierten Einzelhandel, Vending, Massagesessel, EV-Ladestationen, Werbung, Pop-up-Handel und andere kommerzielle Konzepte zu finden, zu sichern und zu betreiben.",
       geography: "ESTLAND · LETTLAND · LITAUEN",
       primaryCta: "Expansion besprechen",
       secondaryCta: "Standort einreichen",
@@ -462,17 +591,18 @@ const copy = {
       objectsQualification:
         "Die Zahlen sind indikative Suchkategorien und keine bestätigte Verfügbarkeit.",
       potentialSites: "Potenzielle Objekte",
-      alertEyebrow: "AKTUELLE PARTNERCHANCE",
-      alertTitle: "Wir suchen ungenutzte Gewerbeflächen in Europa.",
+      alertEyebrow: "AKTUELLE STANDORTANFRAGE FÜR EUROPA",
+      alertTitle: "Europäische Standorte für Massagesessel gesucht.",
       alertSubheadline:
         "Helfen Sie dabei, Selbstbedienungs-Massagesessel an stark frequentierten Standorten zu platzieren.",
       alertBody:
-        "Rankly sucht derzeit potenzielle Standorte in Europa für baltische Betreiber von Massagesesseln. Besonders interessant sind Einkaufszentren, Flughäfen, Bahnhöfe und Busbahnhöfe, Fitnessstudios, Hotels, Büros und andere gewerbliche Umgebungen mit Warte-, Ruhe- oder Laufkundschaft.",
+        "Derzeit unterstützen wir baltische Betreiber von Massagesesseln bei der Suche nach potenziellen Standorten in Europa. Gleichzeitig unterstützt Rankly auch andere kommerzielle Konzepte bei der Suche nach geeigneten Standorten.",
       alertHeading: "Zwei Seiten derselben Chance.",
-      ownerOffer: "Haben Sie ungenutzte Flächen in Europa?",
+      ownerOffer: "Haben Sie ungenutzte Gewerbeflächen in Europa oder im Baltikum?",
       ownerAction: "Reichen Sie einen potenziellen Standort ein",
-      operatorOffer: "Suchen Sie europäische Standorte für Massagesessel?",
+      operatorOffer: "Suchen Sie Standorte für Ihr nächstes kommerzielles Konzept?",
       operatorAction: "Besprechen Sie Ihre Expansion",
+      campaignOperatorLabel: "BETREIBER VON MASSAGESESSELN",
       ownerOfferDetail:
         "Stellen Sie ungenutzte Flächen vor. Wir koordinieren die erste Prüfung der Möglichkeit mit dem jeweiligen Betreiber.",
       operatorOfferDetail:
@@ -480,6 +610,17 @@ const copy = {
       alertNow: "JETZT EUROPÄISCHE STANDORTE GESUCHT",
       alertQualification:
         "Dies ist eine aktuelle Standortanfrage. Platzierung, kommerzielle Bedingungen und endgültige Verfügbarkeit werden im Einzelfall geprüft.",
+      positioning:
+        "Rankly unterstützt Unternehmen dabei, gewerbliche Standorte in Europa und im Baltikum zu finden, zu sichern und zu betreiben.",
+      positioningDetail:
+        "Wir arbeiten mit Betreibern aus den Bereichen automatisierter Einzelhandel, Vending, Massagesessel, EV-Ladestationen, Werbung, Pop-up-Handel und anderen kommerziellen Konzepten.",
+      directionA: "Baltische Betreiber → Europäische Standorte",
+      directionB: "Europäische Chancen → Kommerzielle Betreiber",
+      intent: "Wonach suchen Sie?",
+      generalConcept: "Allgemeines kommerzielles Konzept",
+      massageChairs: "Massagesessel",
+      propertyIntent: "Immobilieneigentümer / verfügbare Fläche",
+      otherIntent: "Andere",
       modelEyebrow: "DAS RANKLY-MODELL",
       modelTitle: "Gewerbeflächen werden erst wertvoll, wenn sie genutzt werden.",
       modelBody:
@@ -493,9 +634,26 @@ const copy = {
       propertyTitle: "Machen Sie ungenutzte Gewerbeflächen produktiv.",
       propertyBody:
         "Reichen Sie einen Standort für potenzielle Vending-, Werbe-, Pop-up- oder Infrastrukturnutzung ein. Eignung und kommerzielle Bedingungen werden individuell bewertet.",
+      broadOperatorEyebrow: "FÜR BETREIBER UND KOMMERZIELLE KONZEPTE",
+      broadOperatorTitle: "Suchen Sie Standorte für Ihr nächstes kommerzielles Konzept?",
+      broadOperatorBody:
+        "Teilen Sie uns mit, was Sie betreiben, wohin Sie expandieren möchten und welche Anforderungen der Standort erfüllen muss. Rankly unterstützt bei der strukturierten Suche, der Bewertung potenzieller Möglichkeiten und der Koordination lokaler kommerzieller Gespräche.",
+      broadPropertyTitle: "Haben Sie ungenutzte Gewerbeflächen in Europa oder im Baltikum?",
+      broadPropertyBody:
+        "Rankly unterstützt Immobilieneigentümer bei der Bewertung möglicher Nutzungen ungenutzter Flächen und bringt sie mit geeigneten kommerziellen Betreibern zusammen.",
+      categories: [
+        "Automatisierter Einzelhandel",
+        "Vending",
+        "Massagesessel",
+        "EV-Ladestationen",
+        "Werbung",
+        "Pop-up-Handel",
+        "Kommerzielle Dienstleistungen",
+      ],
     },
     form: {
       name: "Name",
+      intent: "Wonach suchen Sie?",
       email: "E-Mail",
       message: "Nachricht",
       sendInquiry: "Anfrage senden",
@@ -524,6 +682,10 @@ const copy = {
       powerRequirements: "Stromanforderungen",
       serviceModel: "Wartungs- / Servicemodell",
       installationTimeline: "Installationszeitraum",
+      businessType: "Geschäfts- oder Konzepttyp",
+      requiredTypes: "Benötigte Standorttypen",
+      technicalRequirements: "Technische Anforderungen",
+      timeline: "Zeitraum",
     },
     footer: {
       navigation: "Navigation",
@@ -894,7 +1056,7 @@ function AudiencePanel({
   eyebrow: string;
   title: string;
   text: string;
-  examples: string[];
+  examples: readonly string[];
   cta: string;
   href: string;
   dark?: boolean;
@@ -1199,6 +1361,7 @@ function ContactForm({ locale }: { locale: Locale }) {
     name: "",
     email: "",
     message: "",
+    intent: "",
   });
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -1235,6 +1398,49 @@ function ContactForm({ locale }: { locale: Locale }) {
             placeholder="name@company.com"
             required
           />
+        </label>
+      </div>
+      <label>
+        <span>{t.intent}</span>
+        <select
+          value={values.intent}
+          onChange={(event) => setValues({ ...values, intent: event.target.value })}
+        >
+          <option value="">{t.intent}</option>
+          <option>{copy[locale].home.generalConcept}</option>
+          <option>{copy[locale].home.massageChairs}</option>
+          <option>{copy[locale].home.propertyIntent}</option>
+          <option>{copy[locale].home.otherIntent}</option>
+        </select>
+      </label>
+      <div className="field-grid two-up">
+        <label>
+          <span>{t.businessType}</span>
+          <input type="text" />
+        </label>
+        <label>
+          <span>{t.operatingCountries}</span>
+          <input type="text" />
+        </label>
+        <label>
+          <span>{t.targetCountries}</span>
+          <input type="text" />
+        </label>
+        <label>
+          <span>{t.requiredTypes}</span>
+          <input type="text" />
+        </label>
+        <label>
+          <span>{t.desiredLocations}</span>
+          <input type="text" />
+        </label>
+        <label>
+          <span>{t.technicalRequirements}</span>
+          <input type="text" />
+        </label>
+        <label>
+          <span>{t.timeline}</span>
+          <input type="text" />
         </label>
       </div>
       <label>
@@ -1582,7 +1788,7 @@ function MassageChairAlert({
             </button>
           </div>
           <div className="massage-audience-card featured">
-            <span className="audience-label">{copy[locale].home.operatorsEyebrow}</span>
+            <span className="audience-label">{t.campaignOperatorLabel}</span>
             <h4>{t.operatorOffer}</h4>
             <p>{t.operatorOfferDetail}</p>
             <button
@@ -1680,16 +1886,10 @@ function HomePage({
         <div className="rankly-container audience-grid">
           <RevealOnScroll>
             <AudiencePanel
-              eyebrow={copy[locale].home.operatorsEyebrow}
-              title={copy[locale].home.operatorsTitle}
-              text={copy[locale].home.operatorsBody}
-              examples={[
-                "Vending",
-                "Automated retail",
-                "EV charging",
-                "Advertising",
-                "Pop-up concepts",
-              ]}
+              eyebrow={copy[locale].home.broadOperatorEyebrow}
+              title={copy[locale].home.broadOperatorTitle}
+              text={copy[locale].home.broadOperatorBody}
+              examples={copy[locale].home.categories}
               cta={copy[locale].home.primaryCta}
               href={withLocale("/contact", locale)}
               dark
@@ -1698,20 +1898,24 @@ function HomePage({
           <RevealOnScroll delay={0.08}>
             <AudiencePanel
               eyebrow={copy[locale].home.propertyEyebrow}
-              title={copy[locale].home.propertyTitle}
-              text={copy[locale].home.propertyBody}
-              examples={[
-                "Shopping centres",
-                "Stations",
-                "Offices",
-                "Sports clubs",
-                "Logistics",
-                "Fuel stations",
-              ]}
+              title={copy[locale].home.broadPropertyTitle}
+              text={copy[locale].home.broadPropertyBody}
+              examples={copy[locale].home.categories}
               cta={copy[locale].home.secondaryCta}
               href={withLocale("/property-owners", locale)}
             />
           </RevealOnScroll>
+        </div>
+      </section>
+
+      <section className="direction-band">
+        <div className="rankly-container direction-band-inner">
+          <p>{copy[locale].home.positioning}</p>
+          <span>{copy[locale].home.positioningDetail}</span>
+          <div className="direction-flow">
+            <strong>{copy[locale].home.directionA}</strong>
+            <strong>{copy[locale].home.directionB}</strong>
+          </div>
         </div>
       </section>
 
@@ -2186,6 +2390,32 @@ export function RanklyApp() {
     window.addEventListener("popstate", onPopState);
     return () => window.removeEventListener("popstate", onPopState);
   }, []);
+
+  useEffect(() => {
+    const metadata = {
+      en: {
+        title: "Rankly — Specialised Leasing for Commercial Locations in Europe and the Baltics",
+        description:
+          "Rankly helps businesses find, secure and operate commercial locations across Europe and the Baltics for automated retail, vending, massage chairs, EV charging, advertising and other commercial concepts.",
+      },
+      lv: {
+        title: "Rankly — Specializēta komerciālo lokāciju noma Eiropā un Baltijā",
+        description:
+          "Rankly palīdz uzņēmumiem atrast, nodrošināt un pārvaldīt komerciālās lokācijas Eiropā un Baltijā dažādiem komerciāliem konceptiem.",
+      },
+      de: {
+        title:
+          "Rankly — Spezialisierte Vermietung gewerblicher Standorte in Europa und im Baltikum",
+        description:
+          "Rankly unterstützt Unternehmen dabei, gewerbliche Standorte in Europa und im Baltikum für verschiedene kommerzielle Konzepte zu finden, zu sichern und zu betreiben.",
+      },
+    }[route.locale];
+    document.title = metadata.title;
+    document.documentElement.lang = route.locale;
+    document
+      .querySelector('meta[name="description"]')
+      ?.setAttribute("content", metadata.description);
+  }, [route.locale]);
 
   const pageContent = useMemo(() => {
     switch (route.page) {

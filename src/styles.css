@@ -1327,7 +1327,8 @@ main {
 }
 
 .rankly-form input,
-.rankly-form textarea {
+.rankly-form textarea,
+.rankly-form select {
   width: 100%;
   padding: 0.9rem 1rem;
   border-radius: 12px;
@@ -1340,7 +1341,8 @@ main {
 }
 
 .rankly-form input:focus,
-.rankly-form textarea:focus {
+.rankly-form textarea:focus,
+.rankly-form select:focus {
   outline: none;
   border-color: rgba(183, 240, 0, 0.9);
   box-shadow: 0 0 0 4px rgba(183, 240, 0, 0.15);
@@ -1349,6 +1351,50 @@ main {
 .rankly-form textarea {
   resize: vertical;
   min-height: 120px;
+}
+
+.direction-band {
+  background: var(--rankly-navy-2);
+  color: var(--rankly-white);
+}
+
+.direction-band-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px 36px;
+  padding: 52px 0;
+}
+
+.direction-band-inner > p {
+  grid-column: 1 / -1;
+  max-width: 760px;
+  font-family: var(--rankly-font-display);
+  font-size: clamp(1.45rem, 2.6vw, 2.4rem);
+  line-height: 1.08;
+}
+
+.direction-band-inner > span {
+  grid-column: 1 / -1;
+  max-width: 820px;
+  color: rgba(245, 247, 248, 0.68);
+}
+
+.direction-flow {
+  display: contents;
+}
+
+.direction-flow strong {
+  padding-top: 18px;
+  border-top: 1px solid rgba(220, 226, 232, 0.16);
+  color: var(--rankly-lime);
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.direction-flow strong + strong {
+  color: var(--rankly-white);
 }
 
 .form-actions {
