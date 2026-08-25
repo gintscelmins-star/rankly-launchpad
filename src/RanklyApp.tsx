@@ -31,6 +31,36 @@ type ProcessStep = {
   description: string;
 };
 
+type OpportunityStat = {
+  id: string;
+  label: string;
+  value: string | null;
+  verified: boolean;
+  source?: string;
+  referenceDate?: string;
+};
+
+const opportunityStats: Record<Locale, OpportunityStat[]> = {
+  en: [
+    { id: "airports", label: "INTERNATIONAL AIRPORTS", value: null, verified: false },
+    { id: "shopping", label: "LARGE SHOPPING CENTRES", value: null, verified: false },
+    { id: "gyms", label: "GYMS / SPORTS CLUBS", value: null, verified: false },
+    { id: "business", label: "BUSINESS CENTRES", value: null, verified: false },
+  ],
+  lv: [
+    { id: "airports", label: "STARPTAUTISKĀS LIDOSTAS", value: null, verified: false },
+    { id: "shopping", label: "LIELIE TIRDZNIECĪBAS CENTRI", value: null, verified: false },
+    { id: "gyms", label: "SPORTA ZĀLES / KLUBI", value: null, verified: false },
+    { id: "business", label: "BIZNESA CENTRI", value: null, verified: false },
+  ],
+  de: [
+    { id: "airports", label: "INTERNATIONALE FLUGHÄFEN", value: null, verified: false },
+    { id: "shopping", label: "GROSSE EINKAUFSZENTREN", value: null, verified: false },
+    { id: "gyms", label: "FITNESSSTUDIOS / SPORTVEREINE", value: null, verified: false },
+    { id: "business", label: "BÜRO- UND GESCHÄFTSZENTREN", value: null, verified: false },
+  ],
+};
+
 const supportedLocales = ["en", "lv", "de"] as const;
 const defaultLocale: Locale = "en";
 
@@ -90,6 +120,27 @@ const copy = {
       offerLine: "LOCATION SOURCING  ·  LEASE COORDINATION  ·  LOCAL OPERATIONS",
       qualificationNote:
         "Potential opportunities are identified for sourcing and evaluation. Final availability depends on the location and commercial agreement.",
+      objectsHeading: "POTENTIAL OBJECTS ACROSS THE BALTICS",
+      objectsQualification:
+        "Figures are indicative categories for sourcing, not confirmed availability.",
+      potentialSites: "Potential sites",
+      alertEyebrow: "ACTIVE PARTNER OPPORTUNITY",
+      alertTitle: "We are looking for unused commercial space in Europe.",
+      alertSubheadline: "Help bring self-service massage chairs to high-footfall locations.",
+      alertBody:
+        "Rankly is currently sourcing potential locations in Europe for Baltic massage-chair operators. We are interested in shopping centres, airports, railway and bus stations, gyms, hotels, offices and other commercial environments where visitors naturally wait, rest or pass through.",
+      alertHeading: "Two sides of the same opportunity.",
+      ownerOffer: "Have unused space in Europe?",
+      ownerAction: "Submit a potential location",
+      operatorOffer: "Need European locations for massage chairs?",
+      operatorAction: "Discuss your expansion",
+      ownerOfferDetail:
+        "Provide unused space. We coordinate the initial opportunity review with the relevant operator.",
+      operatorOfferDetail:
+        "Tell us your target countries, preferred location types and technical requirements. We help structure the search and local coordination.",
+      alertNow: "NOW SOURCING EUROPEAN LOCATIONS",
+      alertQualification:
+        "This is an active sourcing request. Placement, commercial terms and final availability are evaluated case by case.",
       modelEyebrow: "THE RANKLY MODEL",
       modelTitle: "Commercial space becomes valuable only when it is operational.",
       modelBody:
@@ -118,6 +169,21 @@ const copy = {
         "Thank you. This prototype form has recorded your request locally. Connect a CRM or form endpoint before launch.",
       successLocation:
         "Thank you. This prototype form has recorded your location request locally. Connect a CRM or form endpoint before launch.",
+      contactPerson: "Contact person",
+      country: "Country",
+      availableArea: "Available area",
+      setting: "Indoor / outdoor",
+      electricity: "Electricity available",
+      accessInfo: "Customer traffic or access information",
+      photosLink: "Photos or location link",
+      operatingCountries: "Current operating countries",
+      targetCountries: "Target European countries",
+      preferredTypes: "Preferred location types",
+      desiredLocations: "Number of desired locations",
+      chairDimensions: "Chair dimensions",
+      powerRequirements: "Power requirements",
+      serviceModel: "Maintenance / service model",
+      installationTimeline: "Installation timeline",
     },
     footer: {
       navigation: "Navigation",
@@ -222,6 +288,28 @@ const copy = {
       offerLine: "LOKĀCIJU ATLASE  ·  NOMAS KOORDINĒŠANA  ·  VIETĒJĀ DARBĪBA",
       qualificationNote:
         "Potenciālās iespējas tiek identificētas atlasei un izvērtēšanai. Galīgā pieejamība ir atkarīga no lokācijas un komerciālās vienošanās.",
+      objectsHeading: "IESPĒJAMIE OBJEKTI BALTIJĀ KOPĀ",
+      objectsQualification:
+        "Skaitļi ir orientējoši atlases kategoriju apjomi, nevis apstiprināta pieejamība.",
+      potentialSites: "Potenciālie objekti",
+      alertEyebrow: "AKTUĀLA PARTNERĪBAS IESPĒJA",
+      alertTitle: "Meklējam neizmantotas komerciālās telpas Eiropā.",
+      alertSubheadline:
+        "Palīdziet izvietot pašapkalpošanās masāžas krēslus vietās ar lielu cilvēku plūsmu.",
+      alertBody:
+        "Rankly pašlaik meklē potenciālas lokācijas Eiropā Baltijas masāžas krēslu operatoriem. Mūs interesē tirdzniecības centri, lidostas, dzelzceļa stacijas un autoostas, sporta zāles, viesnīcas, biroji un citas komerciālās vides, kur apmeklētāji gaida, atpūšas vai pārvietojas.",
+      alertHeading: "Divas vienas iespējas puses.",
+      ownerOffer: "Vai jums ir neizmantota platība Eiropā?",
+      ownerAction: "Piesakiet potenciālo lokāciju",
+      operatorOffer: "Vai meklējat lokācijas masāžas krēsliem Eiropā?",
+      operatorAction: "Pārrunājiet paplašināšanos",
+      ownerOfferDetail:
+        "Piedāvājiet neizmantotu platību. Mēs koordinēsim sākotnējo iespējas izvērtēšanu ar attiecīgo operatoru.",
+      operatorOfferDetail:
+        "Pastāstiet par mērķa valstīm, vēlamajiem objektu veidiem un tehniskajām prasībām. Mēs palīdzēsim strukturēt atlasi un vietējo koordinēšanu.",
+      alertNow: "PAŠLAIK MEKLĒJAM LOKĀCIJAS EIROPĀ",
+      alertQualification:
+        "Šis ir aktīvs lokāciju atlases pieprasījums. Izvietošana, komerciālie nosacījumi un galīgā pieejamība tiek izvērtēti katrā gadījumā atsevišķi.",
       modelEyebrow: "RANKLY MODELIS",
       modelTitle: "Komerctelpa kļūst vērtīga tikai tad, kad tā darbojas.",
       modelBody:
@@ -250,6 +338,21 @@ const copy = {
         "Paldies! Jūsu pieprasījums ir veiksmīgi sagatavots. Pirms palaišanas pieslēdziet CRM vai formas galapunktu, lai saņemtu iesniegumus.",
       successLocation:
         "Paldies! Jūsu lokācijas pieprasījums ir veiksmīgi sagatavots. Pirms palaišanas pieslēdziet CRM vai formas galapunktu, lai saņemtu iesniegumus.",
+      contactPerson: "Kontaktpersona",
+      country: "Valsts",
+      availableArea: "Pieejamā platība",
+      setting: "Iekštelpās / ārā",
+      electricity: "Pieejama elektrība",
+      accessInfo: "Apmeklētāju plūsma vai piekļuve",
+      photosLink: "Fotoattēli vai lokācijas saite",
+      operatingCountries: "Pašreizējās darbības valstis",
+      targetCountries: "Mērķa valstis Eiropā",
+      preferredTypes: "Vēlamie objektu veidi",
+      desiredLocations: "Vēlamo lokāciju skaits",
+      chairDimensions: "Krēsla izmēri",
+      powerRequirements: "Elektroenerģijas prasības",
+      serviceModel: "Apkopes / servisa modelis",
+      installationTimeline: "Uzstādīšanas termiņš",
     },
     footer: {
       navigation: "Navigācija",
@@ -355,6 +458,28 @@ const copy = {
       offerLine: "STANDORTSUCHE  ·  MIETKOORDINATION  ·  LOKALER BETRIEB",
       qualificationNote:
         "Potenzielle Möglichkeiten werden zur Suche und Bewertung identifiziert. Die endgültige Verfügbarkeit hängt vom Standort und der kommerziellen Vereinbarung ab.",
+      objectsHeading: "POTENZIELLE OBJEKTE IM BALTIKUM",
+      objectsQualification:
+        "Die Zahlen sind indikative Suchkategorien und keine bestätigte Verfügbarkeit.",
+      potentialSites: "Potenzielle Objekte",
+      alertEyebrow: "AKTUELLE PARTNERCHANCE",
+      alertTitle: "Wir suchen ungenutzte Gewerbeflächen in Europa.",
+      alertSubheadline:
+        "Helfen Sie dabei, Selbstbedienungs-Massagesessel an stark frequentierten Standorten zu platzieren.",
+      alertBody:
+        "Rankly sucht derzeit potenzielle Standorte in Europa für baltische Betreiber von Massagesesseln. Besonders interessant sind Einkaufszentren, Flughäfen, Bahnhöfe und Busbahnhöfe, Fitnessstudios, Hotels, Büros und andere gewerbliche Umgebungen mit Warte-, Ruhe- oder Laufkundschaft.",
+      alertHeading: "Zwei Seiten derselben Chance.",
+      ownerOffer: "Haben Sie ungenutzte Flächen in Europa?",
+      ownerAction: "Reichen Sie einen potenziellen Standort ein",
+      operatorOffer: "Suchen Sie europäische Standorte für Massagesessel?",
+      operatorAction: "Besprechen Sie Ihre Expansion",
+      ownerOfferDetail:
+        "Stellen Sie ungenutzte Flächen vor. Wir koordinieren die erste Prüfung der Möglichkeit mit dem jeweiligen Betreiber.",
+      operatorOfferDetail:
+        "Teilen Sie uns Ihre Zielländer, bevorzugten Standorttypen und technischen Anforderungen mit. Wir unterstützen bei der strukturierten Suche und lokalen Koordination.",
+      alertNow: "JETZT EUROPÄISCHE STANDORTE GESUCHT",
+      alertQualification:
+        "Dies ist eine aktuelle Standortanfrage. Platzierung, kommerzielle Bedingungen und endgültige Verfügbarkeit werden im Einzelfall geprüft.",
       modelEyebrow: "DAS RANKLY-MODELL",
       modelTitle: "Gewerbeflächen werden erst wertvoll, wenn sie genutzt werden.",
       modelBody:
@@ -384,6 +509,21 @@ const copy = {
         "Vielen Dank. Ihre Anfrage wurde erfolgreich vorbereitet. Verbinden Sie vor dem Launch ein CRM oder einen Formular-Endpunkt, um Einsendungen zu empfangen.",
       successLocation:
         "Vielen Dank. Ihre Standortanfrage wurde erfolgreich vorbereitet. Verbinden Sie vor dem Launch ein CRM oder einen Formular-Endpunkt, um Einsendungen zu empfangen.",
+      contactPerson: "Kontaktperson",
+      country: "Land",
+      availableArea: "Verfügbare Fläche",
+      setting: "Innenbereich / Außenbereich",
+      electricity: "Strom vorhanden",
+      accessInfo: "Besucherfrequenz oder Zugangsinformationen",
+      photosLink: "Fotos oder Standortlink",
+      operatingCountries: "Aktuelle Betriebsländer",
+      targetCountries: "Zielländer in Europa",
+      preferredTypes: "Bevorzugte Standorttypen",
+      desiredLocations: "Anzahl gewünschter Standorte",
+      chairDimensions: "Abmessungen des Sessels",
+      powerRequirements: "Stromanforderungen",
+      serviceModel: "Wartungs- / Servicemodell",
+      installationTimeline: "Installationszeitraum",
     },
     footer: {
       navigation: "Navigation",
@@ -1134,8 +1274,15 @@ function LocationForm({ locale }: { locale: Locale }) {
   const [values, setValues] = useState({
     name: "",
     email: "",
+    contactPerson: "",
+    country: "",
     city: "",
     propertyType: "",
+    availableArea: "",
+    setting: "",
+    electricity: "",
+    accessInfo: "",
+    photosLink: "",
   });
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -1148,6 +1295,25 @@ function LocationForm({ locale }: { locale: Locale }) {
 
   return (
     <form className="rankly-form" onSubmit={onSubmit} noValidate>
+      <div className="field-grid two-up">
+        <label>
+          <span>{t.contactPerson}</span>
+          <input
+            type="text"
+            value={values.contactPerson}
+            onChange={(event) => setValues({ ...values, contactPerson: event.target.value })}
+          />
+        </label>
+        <label>
+          <span>{t.country}</span>
+          <input
+            type="text"
+            value={values.country}
+            onChange={(event) => setValues({ ...values, country: event.target.value })}
+            required
+          />
+        </label>
+      </div>
       <div className="field-grid two-up">
         <label>
           <span>{t.propertyName}</span>
@@ -1176,6 +1342,48 @@ function LocationForm({ locale }: { locale: Locale }) {
           />
         </label>
       </div>
+      <div className="field-grid two-up">
+        <label>
+          <span>{t.availableArea}</span>
+          <input
+            type="text"
+            value={values.availableArea}
+            onChange={(event) => setValues({ ...values, availableArea: event.target.value })}
+          />
+        </label>
+        <label>
+          <span>{t.setting}</span>
+          <input
+            type="text"
+            value={values.setting}
+            onChange={(event) => setValues({ ...values, setting: event.target.value })}
+          />
+        </label>
+        <label>
+          <span>{t.electricity}</span>
+          <input
+            type="text"
+            value={values.electricity}
+            onChange={(event) => setValues({ ...values, electricity: event.target.value })}
+          />
+        </label>
+        <label>
+          <span>{t.accessInfo}</span>
+          <input
+            type="text"
+            value={values.accessInfo}
+            onChange={(event) => setValues({ ...values, accessInfo: event.target.value })}
+          />
+        </label>
+      </div>
+      <label>
+        <span>{t.photosLink}</span>
+        <input
+          type="url"
+          value={values.photosLink}
+          onChange={(event) => setValues({ ...values, photosLink: event.target.value })}
+        />
+      </label>
       <div className="field-grid two-up">
         <label>
           <span>{t.city}</span>
@@ -1238,6 +1446,160 @@ function LocationForm({ locale }: { locale: Locale }) {
   );
 }
 
+function PlacementStrip({ locale }: { locale: Locale }) {
+  const t = copy[locale].home;
+  return (
+    <section className="placement-strip" aria-label={t.objectsHeading}>
+      <div className="rankly-container placement-strip-inner">
+        <div className="placement-strip-heading">{t.objectsHeading}</div>
+        <div className="placement-stat-list">
+          {opportunityStats[locale].map((stat) => (
+            <div className="placement-stat" key={stat.id}>
+              <span>{stat.label}</span>
+              <strong>{stat.verified && stat.value ? stat.value : t.potentialSites}</strong>
+            </div>
+          ))}
+        </div>
+        <p className="placement-qualification">{t.objectsQualification}</p>
+      </div>
+    </section>
+  );
+}
+
+function OperatorForm({ locale }: { locale: Locale }) {
+  const t = copy[locale].form;
+  const [status, setStatus] = useState<"idle" | "success">("idle");
+  const [values, setValues] = useState({ company: "", contact: "", email: "" });
+  const fields = [
+    ["operatingCountries", t.operatingCountries],
+    ["targetCountries", t.targetCountries],
+    ["preferredTypes", t.preferredTypes],
+    ["desiredLocations", t.desiredLocations],
+    ["chairDimensions", t.chairDimensions],
+    ["powerRequirements", t.powerRequirements],
+    ["serviceModel", t.serviceModel],
+    ["installationTimeline", t.installationTimeline],
+  ];
+  return (
+    <form
+      className="rankly-form"
+      onSubmit={(event) => {
+        event.preventDefault();
+        if (values.company && values.contact && values.email) setStatus("success");
+      }}
+      noValidate
+    >
+      <div className="field-grid two-up">
+        <label>
+          <span>{t.propertyName}</span>
+          <input
+            value={values.company}
+            onChange={(event) => setValues({ ...values, company: event.target.value })}
+            required
+          />
+        </label>
+        <label>
+          <span>{t.contactPerson}</span>
+          <input
+            value={values.contact}
+            onChange={(event) => setValues({ ...values, contact: event.target.value })}
+            required
+          />
+        </label>
+        <label>
+          <span>{t.email}</span>
+          <input
+            type="email"
+            value={values.email}
+            onChange={(event) => setValues({ ...values, email: event.target.value })}
+            required
+          />
+        </label>
+      </div>
+      <div className="field-grid two-up">
+        {fields.map(([id, label]) => (
+          <label key={id}>
+            <span>{label}</span>
+            <input name={id} type="text" />
+          </label>
+        ))}
+      </div>
+      <label>
+        <span>{t.message}</span>
+        <textarea rows={4} />
+      </label>
+      <div className="form-actions">
+        <button type="submit" className="primary-button">
+          <span>{t.sendInquiry}</span>
+          <ArrowRight size={16} />
+        </button>
+      </div>
+      {status === "success" && (
+        <div className="form-success" role="status" aria-live="polite">
+          {t.success}
+        </div>
+      )}
+    </form>
+  );
+}
+
+function MassageChairAlert({
+  locale,
+  onNavigate,
+}: {
+  locale: Locale;
+  onNavigate: (path: PageKey, locale?: Locale) => void;
+}) {
+  const t = copy[locale].home;
+  return (
+    <section className="massage-alert">
+      <div className="rankly-container massage-alert-inner">
+        <div className="massage-alert-topline">
+          <span className="alert-icon">
+            <ArrowUpRight size={15} />
+          </span>
+          <span>{t.alertEyebrow}</span>
+          <span className="alert-now">
+            <span />
+            {t.alertNow}
+          </span>
+        </div>
+        <h2>{t.alertTitle}</h2>
+        <p className="massage-alert-subheadline">{t.alertSubheadline}</p>
+        <p className="massage-alert-body">{t.alertBody}</p>
+        <h3>{t.alertHeading}</h3>
+        <div className="massage-audience-grid">
+          <div className="massage-audience-card">
+            <span className="audience-label">{copy[locale].home.propertyEyebrow}</span>
+            <h4>{t.ownerOffer}</h4>
+            <p>{t.ownerOfferDetail}</p>
+            <button
+              type="button"
+              className="alert-button"
+              onClick={() => onNavigate("/property-owners", locale)}
+            >
+              {t.ownerAction} <ArrowRight size={15} />
+            </button>
+          </div>
+          <div className="massage-audience-card featured">
+            <span className="audience-label">{copy[locale].home.operatorsEyebrow}</span>
+            <h4>{t.operatorOffer}</h4>
+            <p>{t.operatorOfferDetail}</p>
+            <button
+              type="button"
+              className="alert-button"
+              onClick={() => onNavigate("/contact", locale)}
+            >
+              {t.operatorAction} <ArrowRight size={15} />
+            </button>
+          </div>
+        </div>
+        <p className="massage-alert-qualification">{t.alertQualification}</p>
+      </div>
+    </section>
+  );
+}
+
 function HomePage({
   locale,
   onNavigate,
@@ -1287,6 +1649,9 @@ function HomePage({
           </div>
         </div>
       </section>
+
+      <PlacementStrip locale={locale} />
+      <MassageChairAlert locale={locale} onNavigate={onNavigate} />
 
       <section className="section-light">
         <div className="rankly-container intro-block">
@@ -1760,7 +2125,7 @@ function ContactPage({ locale }: { locale: Locale }) {
               <Eyebrow>{copy[locale].pages.contact.expand}</Eyebrow>
               <h2>{copy[locale].pages.contact.expandTitle}</h2>
               <p>{copy[locale].pages.contact.expandBody}</p>
-              <ContactForm locale={locale} />
+              <OperatorForm locale={locale} />
             </div>
           </RevealOnScroll>
           <RevealOnScroll delay={0.08}>
